@@ -1,0 +1,37 @@
+{
+  "name": "server-side-rendering",
+  "version": "1.0.0",
+  "description": "Ontwerp en ontwikkel een server-side website voor een opdrachtgever.",
+  "main": "app.js",
+  "type": "module",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "ejs"
+  ],
+  "author": "T.J.B.Scheepers <thomas@scheepers.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Knetters/the-web-is-for-everyone-interactive-functionality/issues"
+  },
+  "homepage": "https://github.com/Knetters/the-web-is-for-everyone-interactive-functionality#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "node-fetch": "^3.3.0",
+    "nodemon": "^2.0.22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Knetters/the-web-is-for-everyone-interactive-functionality.git"
+  }
+}

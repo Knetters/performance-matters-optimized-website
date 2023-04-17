@@ -1,139 +1,140 @@
-# Performance Matters - Optimized Website
+# Interactive functionality
 
-Ontwerp en maak met een team een website voor een opdrachtgever waarbij je verschillende performance technieken toepast.
+Ontwerp en maak voor een opdrachtgever een interactieve toepassing die voor iedereen toegankelijk is.
+
 
 ## Context
-Deze leertaak hoort bij sprint 10 "Performance Matters". Dit is een leertaak die je in een team uitvoert voor een opdrachtgever.
 
-In het college S10W1-01-Sprintplanning-Performance-Matters en de workshop S10W1-03-Samenwerken-in-Github wordt de opdracht en de werkwijze uitgelegd.
+Deze leertaak hoort bij sprint 9 "The Web is for Everyone". Dit is een leertaak die je individueel uitvoert voor een opdrachtgever.
+
+In het college S09W1-01-Sprintplanning-The-Web-Is-For-Everyone wordt de opdracht uitgelegd.
+
+Bij deze leertaak hoort de deeltaak:
+- [Activity Diagram](https://github.com/fdnd-task/the-web-is-for-everyone-activity-diagram)
 
 
 ## Doel van deze opdracht
 
-Tot nu toe heb je voornamelijk alleen gewerkt aan server-side code, API's en client-side scripting. Een frontender werkt vaak samen in teams zodat je taken kunt verdelen en grote(re) opdrachten in minder tijd kunt realiseren. 
-Als je in een team werkt werk je met meerdere frontenders in één repository samen. Je zult moeten overleggen, afspreken wie waar aan gaat werken, en code en design afspraken maken. Hoe je dat op een goede manier doet leer je in deze sprint.
+Tim Berners-Lee, de uitvinder van het internet zei: "_The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect._"
+
+Één van de mooiste [principes](https://www.w3.org/DesignIssues/Principles.html) van het web is dat iedereen met een computer en een browser het web kan gebruiken. [Het web is voor iedereen](https://www.youtube.com/watch?v=UMNFehJIi0E). 
+<br>Maar het web is geen gecontroleerde (programmeer) omgeving, je kan er gerust van uit gaan dat niemand precies hetzelfde te zien krijgt als wat jij in je browser ziet. Er zijn technische beperkingen, zoals afmetingen van de browser, grootte van het apparaat, manier van interactie, kwaliteit van de hardware, kwaliteit van het netwerk en er zijn mensen, allemaal verschillende mensen ...
+
+Het doel van deze opdracht is te leren hoe je een interactieve functionalteit kan ontwerpen en maken met behulp van _Progressive Enhancement_ zodat het voor iedereen toegankelijk is.
+
 
 ## Werkwijze
 
-Je werkt in een team van max. 3 frontenders aan een website voor een opdrachtgever. Zorg er voor dat je duidelijk afspraken maakt en elkaar dagelijks op de hoogte houdt van vorderingen. Samen met jouw team ben je verantwoordelijk voor de planning, het samenwerkingsproces én het eindresultaat.
+Ontwerp en maak een functionaliteit voor je opdrachtgever op basis van een _user story_. De _user story_ voor sprint 9 gaat over het posten van data met behulp van de REST-API. Je bouwt je website in 3 lagen, volgens het principe van _Progressive Enhancement_. 
+<br>[Progressive enhancement](https://briefs.video/videos/is-progressive-enhancement-dead-yet/) is een _(coding) strategy_ waarmee je er voor kan zorgen dat je website het altijd doet. 
 
-Deze opdracht gaat over alle fases van de DLC [analyseren](#analyseren), [ontwerpen](#ontwerpen), [bouwen](#bouwen), [integreren](#integreren) en [testen](#testen).
+1. Eerst bouw je de _core functionality_ van je website in HTML en met behulp van formulieren en NodeJS, voor het server-side afhandelen van het posten van data. (Content layer)
+2. Daarna voeg je CSS toe voor feedback voor de gebruiker en om de huisstijl toe te passen. (Presentation layer)
+3. Tot slot voeg je JavaScript (en CSS) toe om de User Experience te verbeteren. (Client-side scripting)
+
+![image](https://user-images.githubusercontent.com/1391509/226204781-5594ea1b-56c3-45ac-87d4-56dd25e35e58.png)
+<br><small>_The Chocolatey Layers of Progressive Enhancement_</small>
+
+
+Voor deze opdracht doorloop je alle fases van de DLC [analyseren](#analyseren), [ontwerpen](#ontwerpen), [bouwen](#bouwen), [integreren](#integreren) en [testen](#testen).
+
 
 ### Analyseren
-In de analysefase wordt besproken hoe jullie willen gaan [samenwerken](#samenwerken), onderzoek je wat jullie gaan maken en maak je een [planning](#planning). 
 
-#### Samenwerken
-In de analysefase maak je als team afspraken over hoe je gaat samenwerken.
+In de analysefase inventariseer je wat er moet gebeuren om een taak uit te voeren. Je kiest een _user story_ waar je aan gaat werken en onderzoekt hoe het posten van data werkt met de REST-API.
 
-1. Fork deze leertaak en zet de _repository_ klaar voor het team zodat iedereen met dezelfde codebase kan werken.
-3. Vul een Teamcanvas in, begin met het individuele deel en bespreek jouw persoonlijke doelen met je teamgenoten.
-4. Vul vervolgens als team de andere vlakken van het Teamcanvas in.
-5. Maak afspraken over hoe jullie gaan samenwerken,  leg de afspraken vast in de _wiki_.
+#### Sprintplanning
+1. Lees de instructies van deze leertaak zorgvuldig door
+2. Bekijk de verschillende fases van de DLC en wat je per fase gaat doen
+3. Bekijk de planning van [sprint 9](https://programma.fdnd.nl/data-driven-web/the-web-is-for-everyone) en wat je per week gaat doen
+4. Bespreek wat je aan werk verwacht en maak aantekeningen. (wat komt je bekend voor, wat heb je al vaker gedaan of wat lijkt je lastig)
+5. Neem ook de leervraag uit sprint 8 over en bedenk hoe je daar de komende 3 weken aan kan werken
 
-#### Materiaal voor samenwerken
+#### User Stories
+Kies een _user story_ met het label **sprint-9** uit de backlog van het project waar je aan gaat werken. 
+De projecten staan bij [FDND Agency](https://github.com/fdnd-agency).
 
-- [How to Collaborate on GitHub](https://code.tutsplus.com/tutorials/how-to-collaborate-on-github--net-34267)
-- [download het Team Canvas](https://github.com/fdnd-task/performance-matters-fast-website/blob/main/docs/Teamcanvas.pdf)
-- [Lees instructies over het gebruik van het Teamcanvas in de deeltaak uit sprint 1](https://github.com/fdnd-task/your-tribe-team-canvas)
+#### REST-API
+Bekijk in de documentatie van de API of er voor de _user story_ een POST endpoint is en hoe die werkt. ProTip: Gebruik eventueel [Insomnia](https://insomnia.rest/) om bestaande endpoints te onderzoeken.
 
-#### Planning
-In de analysefase bespreek je als team welke werkzaamheden er zijn, wie wat gaat doen en maak je een planning.
+### Bronnen analyseerfase
 
-1. Maak een _project board_ aan op jullie gezamenlijke _repository_ om bij te kunnen houden wie wat doet en wanneer
-2. Plan voor de aankomende weken alle standups en reviews en noteer de planning in jullie _project board_.
-3. Bekijk en bespreek álle _User Stories_ die bij het project horen. 
-4. Bespreek de _User Stories_ die jullie willen oppakken en bedenk wat je voor elke user story moet doen.
-5. Maak bij elke *User Story* meerdere taken aan in het *project board*, geef ze een prioriteit en voeg de namen toe van de mensen die eraan gaan werken. ProTip: Als taken te groot zijn (langer dan een dag duren) is het zinvol ze op te splitsen in meerdere kleinere taken.
-
-#### Materiaal planning
-
-- [About Githhub Projects, quickstart en best practices](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
-- [Wat is een User Story?](https://agilescrumgroup.nl/wat-is-een-user-story/)
-- [What's Microproductivity?](https://blog.trello.com/microproductivity-break-tasks-into-smaller-steps)
+* [Wat is een REST API nou echt: het basisidee](https://blog.wearefrank.nl/wat-is-een-rest-api-nou-echt-het-basisidee)
 
 ### Ontwerpen
-In de ontwerpfase gaan jullie schetsen en afspraken maken over hoe jullie de huisstijl toepassen en hoe je dit gaat verwerken in het project voor de opdrachtgever.
 
-#### Living Styleguide
-In deze Sprint gaan jullie je (ook) richten op de performance van websites. Om de performance te verbeteren kun je verschillende performance technieken toepassen.  Voor deze opdracht gaan jullie een aantal Frontend Performance optimalisaties toepassen zoals die te lezen zijn in de [Frontend Performance Checklist van Smashing Magazine](https://www.smashingmagazine.com/2021/01/front-end-performance-2021-free-pdf-checklist/).
+In de ontwerpfase bedenk en schets je eerst wat je gaat maken. Voor deze opdracht doorloop je meerdere keren de DLC omdat je de functionaliteit in 3 lagen gaat opbouwen, volgens het principe van _Progressive Enhancement_. Je gaat dan ook meerdere keren schetsen.
 
-In de checklist worden verschillende technieken behandeld waarmee je een website kan optimaliseren. Deze technieken hebben effect op wat voor HTML je gebruikt, CSS en/of JS. Afspraken over hoe jullie dit in code en design gaan doen leggen jullie vast in de _living styleguide_.
+Eerst ontwerp en bouw je de _core functionality_ van je website in HTML en met behulp van formulieren en NodeJS, voor het server-side afhandelen van het posten van data. 
 
-1. Clone de bestaande *living-styleguide* voor de opdrachtgever naar jullie repository.
-2. Teken de structuur van de website die jullie willen maken in een _Sitemap_ en bedenk wat op de pagina's moet komen te staan.
-3. Schets de User Stories waar jullie aan gaan werken in een Wireflow en maak gezamenlijk breakdown-schetsen.
-4. Terwijl jullie aan de website gaan werken houden jullie in de *living-stylguide* bij wat voor HTML, CSS en/of JS voor een functionaliteit, component of de layout nodig is.
-5. (optioneel) Als je als team *pull-requests* goed onder de knie hebt kan je aan het eind van de sprint de aanpassingen aan de *living-styleguide* met een *pull-request* samenvoegen met het origineel dat je bij stap 1 *cloned* hebt. Let op: je moet dan afspraken maken met de andere teams die voor deze opdrachtgever werken!
+#### Wireflow
+Teken de _core-functionalty_ van de _user story_ in een wireflow. Zorg dat je de verschillende states van het formulier, het versturen van data, een _succes state_ en mogelijke _errors_ ook tekent. 
 
-#### Project voor de opdrachtgever
-In de ontwerpfase maak je schetsen voor de taak waar jij nu aan gaat werken. Dit doe je waarschijnlijk meerdere keren per sprint, telkens voor de nieuwe taak waar je aan werkt.
+#### Breakdown
+Maak een breakdown-schets waarin je de juiste HTML formulier-elementen die je nodig hebt beschrijft en pseudeo-code voor wat er server-side in NodeJS gebeurt. 
 
-1. Maak ontwerpschetsen, kies zelf het medium wat voor jou het beste werkt maar begin in ieder geval even op papier. Probeer verschillende oplossingen uit maar houd je aan de afspraken in de *living-styleguide*. Je bent klaar als je voor ogen hebt wat je gaat bouwen.
-2. Bespreek jouw ontwerp met een teamgenoot, stel eventueel je ontwerp bij op basis van de feedback die je ontvangt. Hint: Maak een issue aan!
-3. Documenteer jouw ontwerp in de wiki.
-
-#### Materiaal ontwerpfase
-
-- [How to create a UX Sitemap: a simple guideline](https://uxdesign.cc/how-to-create-a-ux-sitemap-a-simple-guideline-8786c16f85c1)
-- [Sitemaps & Information Architecture (IA)](https://xd.adobe.com/ideas/process/information-architecture/sitemap-and-information-architecture/)
-- [Wireframing User Flow with Wireflows](https://balsamiq.com/learn/articles/wireflows/)
-- [Frontend Performance Checklist - Assets Optimizations](https://www.smashingmagazine.com/2021/01/front-end-performance-2021-free-pdf-checklist/#assets-optimizations)
-- [Frontend Performance Checklist - Delivery Optimizations](https://www.smashingmagazine.com/2021/01/front-end-performance-2021-free-pdf-checklist/#delivery-optimizations)
-- [Lees instructies over het maken van een Living-styleguide uit sprint 4](https://github.com/fdnd-task/look-and-feel-living-styleguide/)
-
+### Bronnen ontwerpfase
+* [Wireframing User Flow with Wireflows](https://balsamiq.com/learn/articles/wireflows/)
+* [The Role of Enhancement in Web Design](https://www.nngroup.com/articles/enhancement/)
+* [The Input (Form Input) element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input)
+* [The Form element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
 
 ### Bouwen
-In de bouwfase realiseer je de beslissingen uit de ontwerpfase. Na de les over samenwerken in GitHub doe je dat waarschijnlijk op een *feature branch* die je na het uitwerken van de taak in de integratiefase met een *pull-request* toevoegt aan het project.
 
-1. Werk aan jouw taak. Probeer voor elke afgeronde stap een commit te doen zodat herleidbaar is welke aanpassingen je gemaakt hebt.
-2. Test de implementatie van jouw taak voor je naar de integratiefase gaat.
+#### Inrichten ontwikkelomgeving
 
+Je gaat een server-side website bouwen met Node/Express/EJS gebaseerd op een REST API met JSON. Installeer de Node ontwikkelomgeving en installeer de packages die je nodig hebt. Maak de files en folders aan die je nodig hebt op de Node server. Hint: Gebruik hiervoor `npm init` en `npm install express ejs dotenv` als je from scratch wilt beginnen, of kopieer je project uit de vorige sprint en voer `npm install` uit.
 
-#### Materiaal bouwfase
+#### Progressive enhancement
+Progressive enhancement is een _(coding) strategy_ waarmee je er voor kan zorgen dat je website het altijd doet. 
 
-[Frontend Performance Checklist van Smashing Magazine](https://www.smashingmagazine.com/2021/01/front-end-performance-2021-free-pdf-checklist/).
+1. Eerst bouw je de _core functionality_ van je website in HTML en met behulp van formulieren en NodeJS, voor het server-side afhandelen van het posten van data. 
+2. Daarna voeg je CSS toe voor feedback voor de gebruiker en om de huisstijl toe te passen.
+3. Tot slot voeg je client-side Javascript toe om de _User Experience_ te verbeteren.
+
+### Bronnen bouwfase
+
+* [JavaScript Fetch API Ultimate Guide](https://blog.webdevsimplified.com/2022-01/js-fetch-api/)
+* [Understanding Progressive Enhancement](https://alistapart.com/article/understandingprogressiveenhancement/)
+* [The power of progressive enhancement](https://archive.hankchizljaw.com/wrote/the-power-of-progressive-enhancement/)
+<!-- * [Progressive Enhancement and Data Visualizations](https://css-tricks.com/progressive-enhancement-data-visualizations/) -->
+
 
 ### Integreren
-In de integratiefase voer je de aanpassingen door zodat iedereen ze kan zien en er op verder kan bouwen. Waarschijnlijk doe je dit pas na de les over samenwerken in Github.
+In de integratiefase voer je de aanpassingen door zodat iedereen ze kan zien.
 
-1. Maak een *pull-request* voor jouw feature.
-2. Bespreek met je team wanneer *pull-requests* worden verwerkt en wie ze afhandelt.
-3. Handel het *pull-request* af.
-
-#### Materiaal integratiefase
-
-- [Creating a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
-- [GitHub, Aan een project bijdragen](https://git-scm.com/book/nl/v2/GitHub-Aan-een-project-bijdragen) (laat je niet afschrikken door de command line code, jij kunt daar prima GitHub Desktop voor gebruiken!)
+Als je helemaal klaar bent en alles lokaal werkt ga je verder met het publiceren van jouw project op internet. Omdat we met Node werken is dit iets ingewikkelder dan voorheen, er moet namelijk een serveromgeving opgestart worden. Wij gebruiken cyclic.sh als hostingpartij maar je mag natuurlijk je eigen voorkeur volgen als die anders is.
 
 ### Testen
-In de testfase controleer je of jouw aanpassingen werken zoals bedoeld.
 
-1. Test de performance van jouw project, maak issues aan en documenteer je bevindingen in de wiki.
-2. Test jouw project op meerdere devices en browsers, maak issues aan  en documenteer je bevindingen in de wiki.
-3. Test de toegankelijkheid van jouw project, maak issues aan  en documenteer je bevindingen in de wiki.
-4. Test de bruikbaarheid van jouw project, maak issues aan  en documenteer je bevindingen in de wiki.
+Om er voor te zorgen dat de functionaliteit voor iedereen toegankelijk is test je je werk in verschillende browsers en devices.
 
+Gebruik [caniuse.com](https://caniuse.com), [html5test.com](https://html5test.com), [css3test.com](http://css3test.com) en [kangax.github.io/compat-table/es6/](https://kangax.github.io/compat-table/es6/) om je code te testen en te achterhalen welke technieken browsers ondersteunen. 
 
 ## Criteria
 *Definitions of done*
 
-Focus sprint 10 - De focus van deze sprint ligt op het beter en sneller laten werken van een website en samenwerken.
+Focus sprint 9 - De focus van deze sprint ligt op Progressive Enhancement, toegankelijkheid en testresultaten gebruiken voor het verbeteren van een ontwerp.
 
 Doel van deze opdracht:
 
-* je leert hoe je met een team een website ontwerpt en maakt voor een opdrachtgever waarbij je verschillende performance technieken toepast
+* je leert hoe je een interactieve functionalteit kan ontwerpen en maken met behulp van _Progressive Enhancement_ zodat het voor iedereen toegankelijk is.
 
 Voor deze leertaak gelden de gedragscriteria:
 
-* M: Je combineert aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving
-* S: Je werkt in teams, vraagt begeleiding waar nodig en geeft feedback aan teamleden
+* M: Je houdt in beginnende mate rekening met de belangen van de eindgebruiker bij het realiseren van een oplossing voor een opdrachtgever
 * S: Je draagt verantwoording voor eigen resultaten, verwerkt ontvangen feedback en wijst teamleden op hun verantwoording
 * C: Je kan ontwerpkeuzes, eigen ideeën en producten begrijpelijk overbrengen aan belanghebbenden
 * P: Je analyseert een vraag, signaleert knelpunten en volgt de aangeboden oplossingsrichting
+* P: Je schetst om gedachten en processen te verkennen en abstracte begrippen over te brengen
 
 Deze opdracht is done als:
 
-- [ ] Je hebt met een team aan de opdracht van een opdrachtgever gewerkt
+- [ ] Je hebt interactieve functionaliteit ontworpen en gemaakt met Node, Express en EJS en een REST API en client-side JS, CSS en HTML
+- [ ] Jouw gebruikers kunnen iets achterlaten op jouw website (user generated content)
 - [ ] Je website is online gepubliceerd
-- [ ] De planning, samenwerking en teamafspraken zijn gedocumenteerd in de Wiki en project-board
-- [ ] Verschillende Frontend Performance technieken zijn toegepast en gedocumenteerd in de *Living-Styleguide*
+- [ ] Je hebt gewerkt volgens de verschillende fases van de development-lifecycle en je hebt je proces bijgehouden in de Wiki
+- [ ] Je hebt je werk getest in verschillende browsers en devices en de test gedocumenteerd in je wiki
+- [ ] Je hebt comments in je Node-code waarmee de server-side code is uitgelegd
+- [ ] Je hebt in de Readme bij 'Kenmerken' uitgelegd wat Progressive Enhancement is en hoe je dit hebt toegepast
+
