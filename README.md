@@ -18,7 +18,6 @@ Ik heb me bezig gehouden met de volgende user stories:
 
 > As a commentator I want to be able to see information about a player, so I can enrich my commentary during the live stream.
 
-![mediamodifier_image](https://user-images.githubusercontent.com/60781257/230025742-5c93626b-e2ad-4b5d-97a9-007e96a1baa5.png)
 
 [Live voorbeeld](https://ultitv.onrender.com)
 
