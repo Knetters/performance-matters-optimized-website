@@ -1,7 +1,24 @@
 <%- include('./partials/head') %>
 
 <main>
-    <h1>Index</h1>
+    <div class="main-grid">
+        <div class="panel game-info">
+            <%- include('./partials/gameInfo') %>
+        </div>
+        <div class="panel player-list-1">
+            <%- include('./partials/playerList') %>
+        </div>
+        <div class="panel player-list-2">
+            <%- include('./partials/playerList') %>
+        </div>
+        <div class="panel game-score">
+            <%- include('./partials/gameScore') %>
+        </div>
+    </div>
 </main>
+
+<aside>
+    <%- include('./partials/sidebar') %>
+</aside>
 
 <%- include('./partials/foot') %>
