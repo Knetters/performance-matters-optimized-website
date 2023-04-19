@@ -40,7 +40,7 @@ p {
 .panel {
     background-color: aquamarine;
     border-radius: .5rem;
-    padding: .5rem;
+    padding: 1rem;
 }
 
 .game-score { 
