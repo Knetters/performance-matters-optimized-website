@@ -40,7 +40,9 @@ app.use(express.static("public"));
 app.get('/', async function (request, response) {
   // render the index page with the data from the API
   response.render('index', data);
+
 });
+console.log(data1);
 
 // Create a route for the player info page
 app.get('/playerInfo/:id', (request, response) => {

@@ -1,1 +1,25 @@
-<p>Player list 2</p>
+<div class="team1-players-wrapper players-wrapper">
+    <div class="team1-players-wrapper players-wrapper">
+        <h4 class="team-name">
+            <%= data1.team1Name %>
+        </h4>
+        <% data1.team1Players.forEach(player=> { %> <%# Player card %>
+                <article id="<%= player.playerId %>" class="player-line">
+                    <div class="player-info">
+                        <p class="player-text">
+                            <span class="jersey-number">
+                                <%= player.jerseyNumber %>
+                            </span>
+                            <%= player.name %>
+                        </p>
+                        <div class="dots">
+                            <div class="dot green-dot"></div>
+                            <div class="dot blue-dot"></div>
+                            <div class="dot red-dot"></div>
+                            <div class="dot yellow-dot"></div>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                </article>
+                <% }) %>
+    </div>
