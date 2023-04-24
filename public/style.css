@@ -8,6 +8,7 @@
     /* Colors */
     --c-white: #FEFEFE;
     --c-lightGray: #F8F8F8;
+    --c-mediumGray: #eaeaea;
     --c-darkGray: #afb0af;
     --c-red: #D16950;
     --c-blue: #6f82ed;
@@ -58,6 +59,8 @@ p {
 
 .live-text p {
     color: var(--c-red);
+    font-family: var(--secondairFont);
+    text-transform: uppercase;
 }
 
 /* Layout and grid styling */
@@ -102,10 +105,13 @@ p {
 
 .player-list-1 {
     grid-area: player-list-1;
+    position: relative;
 }
 
 .player-list-2 {
     grid-area: player-list-2;
+    position: relative;
+
 }
 
 .score-list {
@@ -258,6 +264,74 @@ p {
     height: auto;
     width: 100%;
 }
+
+
+/* Player list styling */
+
+.team-name {
+    color: var(--c-blue);
+    font-family: var(--secondairFont);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 2% 0;
+}
+
+.goal-indicators {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    right: 7px;
+    top: 1.5rem;
+    font-family: var(--secondairFont);
+    text-transform: uppercase;
+    font-size: 8px;
+    gap: 8.5px;
+}
+
+.player-line {
+    width: 100%;
+    cursor: pointer;
+}
+
+.player-line:hover {
+    background-color: var(--c-lightGray);
+}
+
+.player-info {
+    display: flex;
+    flex-direction: row;
+    line-height: 200%;
+    font-size: .9rem;
+    letter-spacing: 1px;
+    margin: 0% 0%;
+}
+
+.jersey-number {
+    color: var(--c-blue);
+    font-family: var(--secondairFont);
+    margin-right: 10px;
+    padding-left: 5px;
+}
+
+.score-indicators {
+    position: absolute;
+    right: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.score-indicator {
+    height: 20px;
+    width: 20px;
+    border-radius: 3px;
+    margin: 2.5% 10px;
+    background-color: var(--c-mediumGray);
+}
+
+.line {
+    border-bottom: 1px solid var(--c-mediumGray);
+}
+
 
 /* Score table styling */
 table {
