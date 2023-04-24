@@ -73,7 +73,7 @@ p {
 .main-grid {
     display: grid;
     grid-template-columns: 1.1fr 1.1fr .8fr;
-    grid-template-rows: 0.3fr 0.9fr 0.4fr 2.4fr 1fr;
+    grid-template-rows: 0.3fr 1.2fr 2fr 1fr;
     grid-auto-flow: row;
     height: 100%;
     border-radius: var(--outerSpacing);
@@ -82,7 +82,6 @@ p {
     background-color: var(--c-lightGray);
     grid-template-areas:
         "title-bar title-bar score-list"
-        "team-icon-1 team-icon-2 score-list"
         "game-score game-score score-list"
         "player-list-1 player-list-2 score-list"
         "player-list-1 player-list-2 score-list";
@@ -153,10 +152,10 @@ p {
 /* Marquee */
 .marquee-container {
     width: 100%;
-    display: block;
 }
 
 .marquee {
+    width: 100%;
     display: flex;
     animation: marquee 30s linear infinite;
 }
