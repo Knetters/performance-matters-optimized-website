@@ -126,25 +126,62 @@ p {
     grid-area: team-icon-2;
 }
 
-/* Styling game info (<%- include('./partials/titleBar') %>) */
+/* Styling title bar (<%- include('./partials/titleBar') %>) */
 .flex-container-horizontal {
     display: flex;
     gap: var(--outerSpacing);
     width: 100%;
+    overflow: hidden;
 }
 
 .title-block {
     width: 90%;
+    border-radius: .5rem;
+    background-color: var(--c-white);
 }
 
-.title-block p {
+.title-block li {
     font-family: var(--secondairFont);
     color: var(--c-dark);
-    letter-spacing: 20%;
+    letter-spacing: .20rem;
     font-size: 1.5rem;
+    list-style-position: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
+/* Marquee */
+.marquee {
+    display: flex;
+    animation: marquee 30s linear infinite;
+}
 
+.marquee-content {
+    flex-shrink: 0;
+    display: flex;
+    min-width: 100%;
+    gap: 1.6rem;
+}
+
+.marquee-content2 {
+    flex-shrink: 0;
+    display: flex;
+    min-width: 100%;
+    gap: 1.6rem;
+    animation-delay: 15s;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Styling live (<%- include('./partials/titleBar') %>) */
 .live-block {
     width: 10%;
     text-align: center;
@@ -197,7 +234,19 @@ p {
     }
 }
 
-/* Styling game info (<%- include('./partials/scoreLise') %>) */
+/* Styling team icons (<%- include('./partials/teamIcon1') %>) */
+.image-container img {
+    width: 10rem;
+    height: auto;
+    padding: var(--outerSpacing);
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+}
+
+
+/* Styling game score (<%- include('./partials/scoreLise') %>) */
 .flex-container-vertical {
     display: flex;
     flex-direction: column;
