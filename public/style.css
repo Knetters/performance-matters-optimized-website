@@ -130,6 +130,14 @@ p {
     width: 90%;
 }
 
+.title-block p {
+    font-family: var(--secondairFont);
+    color: var(--c-dark);
+    letter-spacing: 20%;
+    font-size: 1.5rem;
+}
+
+
 .live-block {
     width: 10%;
     text-align: center;
