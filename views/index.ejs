@@ -3,18 +3,27 @@
 <main>
     <div class="background-container">
         <div class="main-grid">
-            <div class="panel game-info">
-                <%- include('./partials/gameInfo') %>
-            </div>
-            <div class="panel player-list-1">
-                <%- include('./partials/playerList') %>
-            </div>
-            <div class="panel player-list-2">
-                <%- include('./partials/playerList') %>
-            </div>
-            <div class="panel game-score">
+            <section class="title-bar">
+                <%- include('./partials/gameTitle') %>
+            </section>
+            <section class="panel game-score">
                 <%- include('./partials/gameScore') %>
-            </div>
+            </section>
+            <section class="panel team-icon-1">
+                <%- include('./partials/teamIcon1') %>
+            </section>
+            <section class="panel team-icon-2">
+                <%- include('./partials/teamIcon2') %>
+            </section>
+            <section class="panel player-list-1">
+                <%- include('./partials/playerList1') %>
+            </section>
+            <section class="panel player-list-2">
+                <%- include('./partials/playerList2') %>
+            </section>
+            <section class="score-list">
+                <%- include('./partials/scoreList') %>
+            </section>
         </div>
     </div>
 </main>
