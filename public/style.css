@@ -144,7 +144,7 @@ p {
     font-family: var(--secondairFont);
     color: var(--c-dark);
     letter-spacing: .20rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     list-style-position: inherit;
     font-weight: 600;
     text-transform: uppercase;
