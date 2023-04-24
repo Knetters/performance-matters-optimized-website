@@ -230,9 +230,8 @@ p {
 
 /* Styling team icons (<%- include('./partials/teamIcon1') %>) */
 .image-container img {
-    width: 10rem;
+    width: 7.5rem;
     height: auto;
-    padding: var(--outerSpacing);
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
@@ -290,15 +289,16 @@ thead {
     display: flex;
 }
 
-.points-team-1, .points-team-2 {
+.points-team-1,
+.points-team-2 {
     width: 35%;
 }
 
-.points-team-1 table{
+.points-team-1 table {
     text-align: left;
 }
 
-.points-team-2 table{
+.points-team-2 table {
     text-align: right;
 }
 
@@ -342,6 +342,4 @@ td span {
 }
 
 /* Quote styling */
-.quote {
-
-}
+.quote {}
