@@ -256,12 +256,12 @@ p {
 }
 
 .score-list-block {
-    height: auto;
+    height: 80%;
     width: 100%;
 }
 
 .quote-block {
-    height: auto;
+    height: 20%;
     width: 100%;
 }
 
