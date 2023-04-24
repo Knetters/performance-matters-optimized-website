@@ -9,6 +9,10 @@
     --c-white: #FEFEFE;
     --c-lightGray: #F8F8F8;
     --c-red: #D16950;
+    --c-blue: #6f82ed;
+    --c-green: #8ADC6D;
+    --c-yellow: #F0C737;
+    --c-dark: #252525;
 
     /* Fonts */
     --primaryFont: 'Outfit', sans-serif;
@@ -19,7 +23,8 @@
     box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
     margin: 0;
     width: 100%;
     height: 100vh;
@@ -61,22 +66,22 @@ p {
     padding: var(--outerSpacing);
 }
 
-.main-grid {  
+.main-grid {
     display: grid;
-    grid-template-columns: 1.1fr 1.1fr .8fr; 
-    grid-template-rows: 0.3fr 0.9fr 0.4fr 2.4fr 1fr; 
+    grid-template-columns: 1.1fr 1.1fr .8fr;
+    grid-template-rows: 0.3fr 0.9fr 0.4fr 2.4fr 1fr;
     grid-auto-flow: row;
     height: 100%;
     border-radius: var(--outerSpacing);
     padding: var(--outerSpacing);
     gap: var(--outerSpacing);
     background-color: var(--c-lightGray);
-    grid-template-areas: 
-    "title-bar title-bar score-list"
-    "team-icon-1 team-icon-2 score-list"
-    "game-score game-score score-list"
-    "player-list-1 player-list-2 score-list"
-    "player-list-1 player-list-2 score-list"; 
+    grid-template-areas:
+        "title-bar title-bar score-list"
+        "team-icon-1 team-icon-2 score-list"
+        "game-score game-score score-list"
+        "player-list-1 player-list-2 score-list"
+        "player-list-1 player-list-2 score-list";
 }
 
 .panel {
@@ -86,32 +91,32 @@ p {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.title-bar { 
-    grid-area: title-bar; 
+.title-bar {
+    grid-area: title-bar;
 }
 
-.game-score { 
-    grid-area: game-score; 
+.game-score {
+    grid-area: game-score;
 }
 
-.player-list-1 { 
-    grid-area: player-list-1; 
+.player-list-1 {
+    grid-area: player-list-1;
 }
 
-.player-list-2 { 
-    grid-area: player-list-2; 
+.player-list-2 {
+    grid-area: player-list-2;
 }
 
-.score-list { 
-    grid-area: score-list; 
+.score-list {
+    grid-area: score-list;
 }
 
-.team-icon-1 { 
-    grid-area: team-icon-1; 
+.team-icon-1 {
+    grid-area: team-icon-1;
 }
 
-.team-icon-2 { 
-    grid-area: team-icon-2; 
+.team-icon-2 {
+    grid-area: team-icon-2;
 }
 
 /* Styling game info (<%- include('./partials/titleBar') %>) */
@@ -159,21 +164,21 @@ p {
     box-shadow: 0 0 0 0 rgba(255, 82, 82, 1);
     animation: pulse-red 2s infinite;
 }
-  
+
 @keyframes pulse-red {
     0% {
-      transform: scale(0.95);
-      box-shadow: 0 0 0 0 var(--c-red);
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 var(--c-red);
     }
-    
+
     70% {
-      transform: scale(1);
-      box-shadow: 0 0 0 5px rgba(255, 82, 82, 0);
+        transform: scale(1);
+        box-shadow: 0 0 0 5px rgba(255, 82, 82, 0);
     }
-    
+
     100% {
-      transform: scale(0.95);
-      box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
     }
 }
 
