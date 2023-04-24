@@ -125,7 +125,7 @@ p {
     grid-area: team-icon-2;
 }
 
-/* Styling title bar (<%- include('./partials/titleBar') %>) */
+/* Styling title bar + marquee (<%- include('./partials/titleBar') %>) */
 .flex-container-horizontal {
     display: flex;
     gap: var(--outerSpacing);
@@ -149,39 +149,33 @@ p {
     text-transform: uppercase;
 }
 
-/* Marquee */
 .marquee-container {
-    width: 100%;
+    overflow: hidden;
+    height: 40px;
 }
 
 .marquee {
+    left: 100%;
     width: 100%;
     display: flex;
+    gap: 1rem;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
     animation: marquee 30s linear infinite;
 }
 
-.marquee-content {
-    flex-shrink: 0;
-    display: flex;
-    min-width: 100%;
-    gap: 1.6rem;
-}
-
-.marquee-content2 {
-    flex-shrink: 0;
-    display: flex;
-    min-width: 100%;
-    gap: 1.6rem;
+.marquee2 {
     animation-delay: 15s;
 }
 
 @keyframes marquee {
-    from {
-        transform: translateX(0);
+    0% {
+        left: 100%;
     }
 
-    to {
-        transform: translateX(-100%);
+    100% {
+        left: -100%
     }
 }
 
@@ -198,12 +192,14 @@ p {
 
 .live-dot {
     width: 30%;
-    margin-top: 7px;
+    margin-top: 5px;
     padding-left: 10%;
 }
 
 .live-text {
     width: 70%;
+    font-weight: 600;
+    font-size: .9rem;
 }
 
 .blob {
