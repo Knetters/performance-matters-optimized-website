@@ -151,6 +151,11 @@ p {
 }
 
 /* Marquee */
+.marquee-container {
+    width: 100%;
+    display: block;
+}
+
 .marquee {
     display: flex;
     animation: marquee 30s linear infinite;
@@ -416,4 +421,6 @@ td span {
 }
 
 /* Quote styling */
-.quote {}
+.quote span {
+    font-size: 1rem;
+}
