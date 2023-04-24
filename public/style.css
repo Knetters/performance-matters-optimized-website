@@ -9,6 +9,7 @@
     --c-white: #FEFEFE;
     --c-lightGray: #F8F8F8;
     --c-mediumGray: #eaeaea;
+    --c-darkGray: #afb0af;
     --c-red: #D16950;
     --c-blue: #6f82ed;
     --c-green: #8ADC6D;
@@ -203,15 +204,16 @@ p {
     align-items: flex-start;
     gap: var(--outerSpacing);
     height: 100%;
+    gap: var(--outerSpacing);
 }
 
 .score-list-block {
-    height: 80%;
+    height: auto;
     width: 100%;
 }
 
 .quote-block {
-    height: 20%;
+    height: auto;
     width: 100%;
 }
 
@@ -283,3 +285,88 @@ p {
 }
 
 
+/* Score table styling */
+table {
+    font-family: var(--secondairFont);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: .8rem;
+    width: 100%;
+}
+
+th {
+    color: var(--c-darkGray);
+    font-weight: 400;
+    padding-bottom: var(--outerSpacing);
+    font-size: .6rem;
+}
+
+thead {
+    height: var(--outerSpacing);
+}
+
+.extra-margin-table {
+    padding-bottom: 1.8rem;
+}
+
+.score-list-container {
+    width: 100%;
+    display: flex;
+}
+
+.points-team-1, .points-team-2 {
+    width: 35%;
+}
+
+.points-team-1 table{
+    text-align: left;
+}
+
+.points-team-2 table{
+    text-align: right;
+}
+
+.score-points {
+    width: 30%;
+}
+
+td {
+    padding-bottom: var(--innerSpacing);
+}
+
+td span {
+    padding: .1rem .4rem;
+    border-radius: .3rem;
+    font-size: .8rem;
+    text-transform: lowercase;
+}
+
+.dark-green {
+    background-color: var(--c-green);
+    border: 1px solid var(--c-green);
+    color: var(--c-white);
+}
+
+.green {
+    background-color: var(--c-white);
+    border: 1px solid var(--c-green);
+    color: var(--c-dark);
+}
+
+.dark-red {
+    background-color: var(--c-red);
+    border: 1px solid var(--c-red);
+    color: var(--c-white);
+}
+
+.red {
+    background-color: var(--c-white);
+    border: 1px solid var(--c-red);
+    color: var(--c-dark);
+}
+
+/* Quote styling */
+.quote {
+
+}
