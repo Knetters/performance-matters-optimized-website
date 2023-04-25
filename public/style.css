@@ -252,7 +252,7 @@ p {
 }
 
 .score-game {
-    font-size: 3.5rem;
+    font-size: 3.7rem;
     font-family: var(--secondairFont);
     font-weight: 700;
     margin-top: 2rem;
@@ -275,8 +275,7 @@ p {
     width: 6rem;
     height: auto;
     display: flex;
-    justify-content: space-between;
-    margin: 0 auto 1rem auto;
+    margin: 0 8rem 1rem 8rem;
     align-items: center;
 }
 
