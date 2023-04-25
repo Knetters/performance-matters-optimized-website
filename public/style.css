@@ -73,7 +73,7 @@ p {
 .main-grid {
     display: grid;
     grid-template-columns: 1.1fr 1.1fr .8fr;
-    grid-template-rows: 0.3fr 1.2fr 2fr 1fr;
+    grid-template-rows: auto auto 1fr 1fr;
     grid-auto-flow: row;
     height: 100%;
     border-radius: var(--outerSpacing);
@@ -323,18 +323,22 @@ p {
 }
 
 .score-list-block {
-    height: 80%;
+    flex: 5 1 auto;
     width: 100%;
+    position: relative;
 }
 
 .quote-block {
-    height: 20%;
+    flex: 0 0 auto;
     width: 100%;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    position: relative;
 }
 
 
 /* Player list styling */
-
 .team-name {
     color: var(--c-blue);
     font-family: var(--secondairFont);
@@ -411,7 +415,6 @@ table {
 }
 
 th {
-    color: var(--c-darkGray);
     font-weight: 400;
     padding-bottom: var(--outerSpacing);
     font-size: .6rem;
@@ -483,7 +486,48 @@ td span {
     color: var(--c-dark);
 }
 
+.quote-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: var(--innerSpacing) var(--outerSpacing);
+    color: var(--c-darkGray);
+}
+
+.quote-button:hover {
+    cursor: pointer;
+}
+
 /* Quote styling */
+.quote {
+    width: 100%;
+    padding: 0rem 2rem;
+}
+
 .quote span {
     font-size: 1rem;
+}
+
+.min-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: var(--innerSpacing) var(--outerSpacing);
+    color: var(--c-darkGray);
+}
+
+.min-button:hover {
+    cursor: pointer;
+}
+
+.quote-button {
+    display: none;
+}
+
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
 }
