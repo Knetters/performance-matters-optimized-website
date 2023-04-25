@@ -493,10 +493,12 @@ td span {
     right: 0;
     margin: var(--innerSpacing) var(--outerSpacing);
     color: var(--c-darkGray);
+    transition: .2s;
 }
 
 .plus-button:hover {
     cursor: pointer;
+    color: var(--c-blue);
 }
 
 /* Quote styling */
@@ -515,10 +517,12 @@ td span {
     right: 0;
     margin: var(--innerSpacing) var(--outerSpacing);
     color: var(--c-darkGray);
+    transition: .2s;
 }
 
 .min-button:hover {
     cursor: pointer;
+    color: var(--c-blue);
 }
 
 .d-none {
