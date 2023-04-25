@@ -148,6 +148,7 @@ p {
     list-style-position: inherit;
     font-weight: 600;
     text-transform: uppercase;
+    margin-left: var(--innerSpacing);
 }
 
 .marquee-container {
@@ -486,7 +487,7 @@ td span {
     color: var(--c-dark);
 }
 
-.quote-button {
+.plus-button {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -494,7 +495,7 @@ td span {
     color: var(--c-darkGray);
 }
 
-.quote-button:hover {
+.plus-button:hover {
     cursor: pointer;
 }
 
@@ -518,10 +519,6 @@ td span {
 
 .min-button:hover {
     cursor: pointer;
-}
-
-.quote-button {
-    display: none;
 }
 
 .d-none {
