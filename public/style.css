@@ -382,6 +382,7 @@ thead {
 
 .score-points {
     width: 30%;
+    font-weight: 600;
 }
 
 td {
