@@ -59,6 +59,11 @@ main {
 }
 
 /* typography */
+h2 {
+    margin: 0;
+    padding: 0;
+}
+
 p {
     margin: 0;
 }
@@ -191,6 +196,7 @@ h4 {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 8px;
 }
 
+
 .title-block li {
     font-family: var(--secondairFont);
     color: var(--c-dark);
@@ -201,6 +207,7 @@ h4 {
     text-transform: uppercase;
     margin-left: var(--innerSpacing);
 }
+
 
 .marquee-container {
     overflow: hidden;
@@ -214,12 +221,11 @@ h4 {
     gap: 1rem;
     overflow: hidden;
     position: relative;
-    white-space: nowrap;
-    animation: marquee 30s linear infinite;
+    animation: marquee 15s linear infinite;
 }
 
 .marquee2 {
-    animation-delay: 15s;
+    animation: marquee2 15s linear infinite;
 }
 
 @keyframes marquee {
@@ -231,6 +237,18 @@ h4 {
         left: -100%
     }
 }
+
+
+@keyframes marquee2 {
+    0% {
+        left: 100%;
+    }
+
+    100% {
+        left: -100%
+    }
+}
+
 
 /* Styling live (<%- include('./partials/titleBar') %>) */
 .live-block {
@@ -305,10 +323,10 @@ h4 {
 }
 
 .score-game {
-    font-size: 3.7rem;
+    font-size: 4.5rem;
     font-family: var(--secondairFont);
     font-weight: 700;
-    margin-top: 2rem;
+    margin-top: 1.3rem;
 }
 
 .image-container {
@@ -326,7 +344,7 @@ h4 {
 }
 
 .image-container img {
-    width: 6rem;
+    width: 6.5rem;
     height: auto;
     display: flex;
     margin: 0 8rem 1rem 8rem;
@@ -343,7 +361,7 @@ h4 {
 }
 
 .time-box {
-    width: 17%;
+    width: 16%;
     margin-bottom: 2.2rem;
 }
 
@@ -452,6 +470,10 @@ h4 {
     background-color: var(--c-mediumGray);
 }
 
+.line {
+    border-bottom: 1px solid var(--c-mediumGray);
+}
+
 .yellow-dot {
     background-color: var(--c-lightGray);
     border: 1.5px solid var(--c-yellow);
@@ -480,11 +502,6 @@ h4 {
     background-color: var(--c-blue);
     border: 1.5px solid var(--c-darkGray);
     color: var(--c-darkGray);
-}
-
-
-.line {
-    border-bottom: 1px solid var(--c-mediumGray);
 }
 
 
@@ -554,25 +571,19 @@ td span {
 
 .green {
     background-color: var(--c-white);
-    border: 1.5px solid var(--c-green);
-    color: var(--c-green);
+    border: 1px solid var(--c-green);
+    color: var(--c-dark);
 }
 
 .dark-red {
     background-color: var(--c-red);
-    border: 1.5px solid var(--c-red);
+    border: 1px solid var(--c-red);
     color: var(--c-white);
 }
 
 .red {
     background-color: var(--c-white);
-    border: 1.5px solid var(--c-red);
-    color: var(--c-dark);
-}
-
-.red {
-    background-color: var(--c-white);
-    border: 1.5px solid var(--c-red);
+    border: 1px solid var(--c-red);
     color: var(--c-dark);
 }
 
@@ -625,4 +636,74 @@ td span {
 
 .d-block {
     display: block;
+}
+
+/* Styling styleguide */
+.styleguide-container {
+    padding: 1rem;
+}
+
+.styleguide-container p {
+    background-color: var(--c-blue);
+    width: 100%;
+    color: #FEFEFE;
+    padding: var(--innerSpacing);
+    border-radius: var(--innerSpacing);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 8px;
+}
+
+.styleguide-container .panel {
+    margin-bottom: 1rem;
+}
+
+.styleguide-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.styleguide-container li {
+    padding-left: var(--innerSpacing);
+}
+
+.border-color-FEFEFE {
+    border-left: solid var(--outerSpacing) var(--c-white);
+}
+
+.border-color-F8F8F8 {
+    border-left: solid var(--outerSpacing) var(--c-lightGray);
+}
+
+.border-color-EAEAEA {
+    border-left: solid var(--outerSpacing) var(--c-mediumGray);
+}
+
+.border-color-AFB0AF {
+    border-left: solid var(--outerSpacing) var(--c-darkGray);
+}
+
+.border-color-D16950 {
+    border-left: solid var(--outerSpacing) var(--c-red);
+}
+
+.border-color-6F82ED {
+    border-left: solid var(--outerSpacing) var(--c-blue);
+}
+
+.border-color-8ADC6D {
+    border-left: solid var(--outerSpacing) var(--c-green);
+}
+
+.border-color-F0C737 {
+    border-left: solid var(--outerSpacing) var(--c-yellow);
+}
+
+.border-color-252525 {
+    border-left: solid var(--outerSpacing) var(--c-dark);
+}
+
+pre {
+    padding: 0rem 1rem;
+    background-color: var(--c-mediumGray);
+    border-radius: var(--innerSpacing);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 8px;
 }
