@@ -42,7 +42,7 @@ app.get('/', async function (request, response) {
   response.render('index', data);
 
 });
-console.log(data1);
+console.log(data2);
 
 // Create a route for the player info page
 app.get('/playerInfo/:id', (request, response) => {
