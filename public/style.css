@@ -53,6 +53,11 @@ main {
 }
 
 /* typography */
+h2 {
+    margin: 0;
+    padding: 0;
+}
+
 p {
     margin: 0;
 }
@@ -536,4 +541,74 @@ td span {
 
 .d-block {
     display: block;
+}
+
+/* Styling styleguide */
+.styleguide-container {
+    padding: 1rem;
+}
+
+.styleguide-container p {
+    background-color: var(--c-blue);
+    width: 100%;
+    color: #FEFEFE;
+    padding: var(--innerSpacing);
+    border-radius: var(--innerSpacing);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 8px;
+}
+
+.styleguide-container .panel {
+    margin-bottom: 1rem;
+}
+
+.styleguide-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.styleguide-container li {
+    padding-left: var(--innerSpacing);
+}
+
+.border-color-FEFEFE {
+    border-left: solid var(--outerSpacing) var(--c-white);
+}
+
+.border-color-F8F8F8 {
+    border-left: solid var(--outerSpacing) var(--c-lightGray);
+}
+
+.border-color-EAEAEA {
+    border-left: solid var(--outerSpacing) var(--c-mediumGray);
+}
+
+.border-color-AFB0AF {
+    border-left: solid var(--outerSpacing) var(--c-darkGray);
+}
+
+.border-color-D16950 {
+    border-left: solid var(--outerSpacing) var(--c-red);
+}
+
+.border-color-6F82ED {
+    border-left: solid var(--outerSpacing) var(--c-blue);
+}
+
+.border-color-8ADC6D {
+    border-left: solid var(--outerSpacing) var(--c-green);
+}
+
+.border-color-F0C737 {
+    border-left: solid var(--outerSpacing) var(--c-yellow);
+}
+
+.border-color-252525 {
+    border-left: solid var(--outerSpacing) var(--c-dark);
+}
+
+pre {
+    padding: 0rem 1rem;
+    background-color: var(--c-mediumGray);
+    border-radius: var(--innerSpacing);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 8px;
 }

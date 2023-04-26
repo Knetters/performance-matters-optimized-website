@@ -63,6 +63,11 @@ app.get('/stats', async function (request, response) {
   response.render('stats', data);
 });
 
+// Create a route for the styleguide page
+app.get('/styleguide', async function (request, response) {
+  response.render('styleguide');
+});
+
 // Create a route for the index page
 app.get('/teams', async function (request, response) {
   // Render the teams with the data.
