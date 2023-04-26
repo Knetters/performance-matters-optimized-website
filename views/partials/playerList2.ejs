@@ -11,14 +11,27 @@
         </div>
 
         <% data1.team2Players.forEach(player=> { %> <%# Player card %>
+            <article id="<%= player.playerId %>" class="player-line">
+                <div class="player-info">
+                    <p class="jersey-number"> <%= player.jerseyNumber %>.</p>
+                    <p class="player-text"><%= player.name %></p>
+                    <div class="score-indicators">
+                        <div class="score-indicator green-dot"></div>
+                        <div class="score-indicator blue-dot"></div>
+                        <div class="score-indicator red-dot"></div>
+                        <div class="score-indicator yellow-dot"></div>
+                    </div>
+                </div>
+                <div class="line"></div>
+            </article>
+            <% }) %>
+            
+
+            <% data1.team2Players.slice(-5).forEach(player=> { %> <%# Player card %>
                 <article id="<%= player.playerId %>" class="player-line">
                     <div class="player-info">
-                        <p class="player-text">
-                            <span class="jersey-number">
-                                <%= player.jerseyNumber %>.
-                            </span>
-                            <%= player.name %>
-                        </p>
+                        <p class="jersey-number"> <%= player.jerseyNumber %>.</p>
+                        <p class="player-text"><%= player.name %></p>
                         <div class="score-indicators">
                             <div class="score-indicator green-dot"></div>
                             <div class="score-indicator blue-dot"></div>
@@ -29,26 +42,5 @@
                     <div class="line"></div>
                 </article>
                 <% }) %>
-                
-
-                <% data1.team2Players.slice(-6).forEach(player=> { %> <%# Player card %>
-                    <article id="<%= player.playerId %>" class="player-line">
-                        <div class="player-info">
-                            <p class="player-text">
-                                <span class="jersey-number">
-                                    <%= player.jerseyNumber %>.
-                                </span>
-                                <%= player.name %>
-                            </p>
-                            <div class="score-indicators">
-                                <div class="score-indicator green-dot"></div>
-                                <div class="score-indicator blue-dot"></div>
-                                <div class="score-indicator red-dot"></div>
-                                <div class="score-indicator yellow-dot"></div>
-                            </div>
-                        </div>
-                        <div class="line"></div>
-                    </article>
-                    <% }) %>
                     
     </div>
