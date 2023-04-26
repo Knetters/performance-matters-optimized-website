@@ -5,32 +5,18 @@
     <div class="title-block">
 
         <div class="marquee-container">
-            <ul class="marquee">
-                <li>Commentary Tool</li>
-                <li>
-                    <%= data1.field %>
-                </li>
-                <li>
-                    <%= data1.division %>
-                </li>
-                <li>
-                    <%= data1.gameStatus %>
-                </li>
-            </ul>
-
-            <!-- Mirrors the content above -->
-            <ul class="marquee marquee2" aria-hidden="true">
-                <li>Commentary Tool</li>
-                <li>
-                    <%= data1.field %>
-                </li>
-                <li>
-                    <%= data1.division %>
-                </li>
-                <li>
-                    <%= data1.gameStatus %>
-                </li>
-            </ul>
+            <div id="marquee">
+                <div id="m1">
+                    <ul>
+                        <li>Commentary Tool - <%= data1.field %> - <%= data1.division %> - <%= data1.gameStatus %></li>
+                    </ul>
+                </div>
+                <div id="m2">
+                    <ul>
+                        <li>Commentary Tool - <%= data1.field %> - <%= data1.division %> - <%= data1.gameStatus %></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 

@@ -208,47 +208,53 @@ h4 {
     margin-left: var(--innerSpacing);
 }
 
-
 .marquee-container {
     overflow: hidden;
     height: 40px;
-}
-
-.marquee {
-    left: 100%;
     width: 100%;
-    display: flex;
-    gap: 1rem;
+}
+
+.marquee-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+#marquee {
+    width: 100%;
     overflow: hidden;
-    position: relative;
-    animation: marquee 15s linear infinite;
+    white-space: nowrap;
 }
-
-.marquee2 {
-    animation: marquee2 15s linear infinite;
+  
+#m1 {
+    width: 100%;
+    display: inline-block;
+    animation: marquee 20s linear infinite;
 }
-
+  
+#m2 {
+    width: 100%;
+    display: inline-block;
+    animation: marquee2 20s linear infinite;
+    animation-delay: 10s;
+}
+  
 @keyframes marquee {
-    0% {
-        left: 100%;
+    from {
+      transform: translateX(100%);
     }
-
-    100% {
-        left: -100%
+    to {
+      transform: translateX(-100%);
     }
 }
-
-
+  
 @keyframes marquee2 {
-    0% {
-        left: 100%;
+    from {
+      transform: translateX(0%);
     }
-
-    100% {
-        left: -100%
+    to {
+      transform: translateX(-200%);
     }
 }
-
 
 /* Styling live (<%- include('./partials/titleBar') %>) */
 .live-block {
