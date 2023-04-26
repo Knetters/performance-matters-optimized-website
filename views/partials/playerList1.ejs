@@ -16,10 +16,14 @@
                         <p class="jersey-number"> <%= player.jerseyNumber %>.</p>
                         <p class="player-text"><%= player.name %></p>
                         <div class="score-indicators">
-                            <div class="score-indicator green-dot"></div>
-                            <div class="score-indicator blue-dot"></div>
-                            <div class="score-indicator red-dot"></div>
-                            <div class="score-indicator yellow-dot"></div>
+                            <span class="score-indicator">
+                                <% if (player.id === data2.scoredBy) { %>
+                                    <span class="blue-dot"></span>
+                                    <% } %>
+                            </span>
+                            <span class="score-indicator blue-dot"></span>
+                            <span class="score-indicator black-dot"></span>
+                            <span class="score-indicator grey-dot"></span>
                         </div>
                     </div>
                     <div class="line"></div>
@@ -33,10 +37,10 @@
                             <p class="jersey-number"> <%= player.jerseyNumber %>.</p>
                             <p class="player-text"><%= player.name %></p>
                             <div class="score-indicators">
-                                <div class="score-indicator green-dot"></div>
-                                <div class="score-indicator blue-dot"></div>
-                                <div class="score-indicator red-dot"></div>
                                 <div class="score-indicator yellow-dot"></div>
+                                <div class="score-indicator blue-dot"></div>
+                                <div class="score-indicator black-dot"></div>
+                                <div class="score-indicator grey-dot"></div>
                             </div>
                         </div>
                         <div class="line"></div>
