@@ -408,6 +408,10 @@ p {
     background-color: var(--c-mediumGray);
 }
 
+.line {
+    border-bottom: 1px solid var(--c-mediumGray);
+}
+
 .yellow-dot {
     background-color: var(--c-lightGray);
     border: 1.5px solid var(--c-yellow);
@@ -436,11 +440,6 @@ p {
     background-color: var(--c-blue);
     border: 1.5px solid var(--c-darkGray);
     color: var(--c-darkGray);
-}
-
-
-.line {
-    border-bottom: 1px solid var(--c-mediumGray);
 }
 
 
@@ -510,25 +509,19 @@ td span {
 
 .green {
     background-color: var(--c-white);
-    border: 1.5px solid var(--c-green);
-    color: var(--c-green);
+    border: 1px solid var(--c-green);
+    color: var(--c-dark);
 }
 
 .dark-red {
     background-color: var(--c-red);
-    border: 1.5px solid var(--c-red);
+    border: 1px solid var(--c-red);
     color: var(--c-white);
 }
 
 .red {
     background-color: var(--c-white);
-    border: 1.5px solid var(--c-red);
-    color: var(--c-dark);
-}
-
-.red {
-    background-color: var(--c-white);
-    border: 1.5px solid var(--c-red);
+    border: 1px solid var(--c-red);
     color: var(--c-dark);
 }
 
