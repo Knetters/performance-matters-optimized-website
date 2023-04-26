@@ -193,13 +193,13 @@ p {
 }
 
 .live-dot {
-    width: 30%;
+    width: 40%;
     margin-top: 5px;
-    padding-left: 10%;
+    margin-left: -.2rem;
 }
 
 .live-text {
-    width: 70%;
+    width: 60%;
     font-weight: 600;
     font-size: .9rem;
 }
