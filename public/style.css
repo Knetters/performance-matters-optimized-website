@@ -249,6 +249,8 @@ p {
     background-image: url(/static/img/GameScore-bg.svg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    border-radius: .5em;
 }
 
 .score-game {
@@ -285,12 +287,12 @@ p {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: -2.2rem;
+    margin-top: -2.3rem;
     margin-left: 0.35rem;
 }
 
 .time-box {
-    width: 15%;
+    width: 17%;
     margin-bottom: 2.2rem;
 }
 
