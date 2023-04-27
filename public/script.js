@@ -39,3 +39,5 @@ document.getElementById("plus-button").addEventListener("click", toggleBlockOn);
 function toggleBlockOn() {
     quoteBlock.classList.toggle("d-none")
 }
+
+$('#marquee').width($('#m1').width());
