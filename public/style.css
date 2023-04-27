@@ -157,7 +157,7 @@ p {
     margin-left: var(--innerSpacing);
 }
 
-
+/* 
 .marquee-container {
     overflow: hidden;
     height: 40px;
@@ -195,6 +195,35 @@ p {
 
     100% {
         left: -100%
+    }
+} */
+
+
+/* MARQUEE */
+.marquee {
+    width: 100%;
+    display: flex;
+    margin-top: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 1.5rem;
+}
+
+.marquee p {
+    width: max-content;
+    animation: to-the-left 30s linear infinite;
+    font-family: var(--secondairFont);
+    color: var(--c-dark);
+    letter-spacing: .20rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+
+@keyframes to-the-left {
+    to {
+        transform: translateX(calc(-100% / 5));
     }
 }
 

@@ -4,35 +4,27 @@
 
     <div class="title-block">
 
-        <div class="marquee-container">
-            <ul class="marquee">
-                <li>Commentary Tool</li>
-                <li>
-                    <%= data1.field %>
-                </li>
-                <li>
-                    <%= data1.division %>
-                </li>
-                <li>
-                    <%= data1.gameStatus %>
-                </li>
-            </ul>
-
-            <!-- Mirrors the content above -->
-            <ul class="marquee marquee2" aria-hidden="true">
-                <li>Commentary Tool</li>
-                <li>
-                    <%= data1.field %>
-                </li>
-                <li>
-                    <%= data1.division %>
-                </li>
-                <li>
-                    <%= data1.gameStatus %>
-                </li>
-            </ul>
-        </div>
+        <section class="marquee">
+            <p>
+                <span>
+                    Commentary Tool • <%= data1.field %> • <%= data1.division %> • <%= data1.gameStatus %> •
+                </span>
+                <span aria-hidden>
+                    Commentary Tool • <%= data1.field %> • <%= data1.division %> • <%= data1.gameStatus %> •
+                </span>
+                <span aria-hidden>
+                    Commentary Tool • <%= data1.field %> • <%= data1.division %> • <%= data1.gameStatus %> •
+                </span>
+                <span aria-hidden>
+                    Commentary Tool • <%= data1.field %> • <%= data1.division %> • <%= data1.gameStatus %> •
+                </span>
+                <span aria-hidden>
+                    Commentary Tool • <%= data1.field %> • <%= data1.division %> • <%= data1.gameStatus %> •
+                </span>
+            </p>
+        </section>
     </div>
+
 
     <!-- Live element -->
     <div class="panel live-block">
@@ -47,3 +39,4 @@
             </div>
         </div>
     </div>
+</div>
