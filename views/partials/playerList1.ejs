@@ -11,49 +11,113 @@
         </div>
 
         <% data1.team1Players.forEach(player=> { %> <%# Player card %>
-            <article id="<%= player.playerId %>" class="player-line">
-                <div class="player-info">
-                    <p class="jersey-number"> <%= player.jerseyNumber %>.</p>
-                    <p class="player-text"><%= player.name %></p>
+                <article id="<%= player.playerId %>" class="player-line">
+                    <div class="player-info">
+                        <p class="jersey-number">
+                            <%= player.jerseyNumber %>.
+                        </p>
+                        <p class="player-text">
+                            <%= player.name %>
+                        </p>
                         <div class="score-indicators">
-
-                            <% let goals =  data2.scoredPoints.filter(sp => sp.scoredBy === player.playerId).length %>
-                            <% let assists = data2.scoredPoints.filter(sp => sp.assistBy === player.playerId).length %>
-
-                            <% let blocks = data2.scoredPoints.reduce((count, sp) => {
-                                return (sp.blockPlayers ? count = count + sp.blockPlayers.filter(bp => bp === player.playerId).length : count = 0)
-                            }, 0); %>
-
-                            <% let turnovers = data2.scoredPoints.reduce((count, sp) => {
-                                return (sp.turnoverPlayers ? count = count + sp.turnoverPlayers.filter(tp => tp === player.playerId).length : count = 0)
-                            }, 0); %>
-
-                            <% if (goals > 0 ) { %>
-                                <span class="score-indicator yellow-dot"><%- goals %></span>
-                            <% } else { %>
-                                <span class="score-indicator">0</span>
-                            <% } %>
-
-                            <% if (assists > 0 ) { %>
-                                <span class="score-indicator blue-dot"><%- assists %></span>
-                            <% } else { %>
-                                <span class="score-indicator">0</span>
-                            <% } %>
-
-                            <% if (blocks > 0 ) { %>
-                                <span class="score-indicator black-dot"><%- blocks %></span>
-                            <% } else { %>
-                                <span class="score-indicator">0</span>
-                            <% } %>
-                            
-                            <% if (turnovers > 0 ) { %>
-                                <span class="score-indicator grey-dot"><%- turnovers %></span>
-                            <% } else { %>
-                                <span class="score-indicator">0</span>
-                            <% } %>
+                            <% let goals=data2.scoredPoints.filter(sp=> sp.scoredBy ===
+                                player.playerId).length %> <% let assists=data2.scoredPoints.filter(sp=> sp.assistBy ===
+                                    player.playerId).length %> <% let blocks=data2.scoredPoints.reduce((count, sp)=> {
+                                        return
+                                        (sp.blockPlayers ? count = count + sp.blockPlayers.filter(bp => bp ===
+                                        player.playerId).length : count = 0) }, 0); %> <% let
+                                            turnovers=data2.scoredPoints.reduce((count, sp)=> { return
+                                            (sp.turnoverPlayers ? count = count + sp.turnoverPlayers.filter(tp =>
+                                            tp === player.playerId).length : count = 0) }, 0); %> <% if (goals> 0
+                                                ) { %>
+                                                <span class="score-indicator yellow-dot">
+                                                   <%-goals%>
+                                                </span>
+                                                <% } else { %>
+                                                    <span class="score-indicator"></span>
+                                                    <% } %>
+                                                        <% if (assists> 0 ) { %>
+                                                            <span class="score-indicator blue-dot">
+                                                                <%- assists %>
+                                                            </span>
+                                                            <% } else { %>
+                                                                <span class="score-indicator"></span>
+                                                                <% } %>
+                                                                    <% if (blocks> 0 ) { %>
+                                                                        <span class="score-indicator black-dot">
+                                                                            <%- blocks %>
+                                                                        </span>
+                                                                        <% } else { %>
+                                                                            <span class="score-indicator"></span>
+                                                                            <% } %>
+                                                                                <% if (turnovers> 0 ) { %>
+                                                                                    <span
+                                                                                        class="score-indicator grey-dot">
+                                                                                        <%- turnovers %>
+                                                                                    </span>
+                                                                                    <% } else { %>
+                                                                                        <span
+                                                                                            class="score-indicator"></span>
+                                                                                        <% } %>
                         </div>
                     </div>
-                <div class="line"></div>
-            </article>
-        <% }) %>                    
+                    <div class="line"></div>
+                </article>
+                <% }) %>
+
+                <% data1.team1Players.slice(5).forEach(player=> { %> <%# Player card %>
+                <article id="<%= player.playerId %>" class="player-line">
+                    <div class="player-info">
+                        <p class="jersey-number">
+                            <%= player.jerseyNumber %>.
+                        </p>
+                        <p class="player-text">
+                            <%= player.name %>
+                        </p>
+                        <div class="score-indicators">
+                            <% let goals=data2.scoredPoints.filter(sp=> sp.scoredBy ===
+                                player.playerId).length %> <% let assists=data2.scoredPoints.filter(sp=> sp.assistBy ===
+                                    player.playerId).length %> <% let blocks=data2.scoredPoints.reduce((count, sp)=> {
+                                        return
+                                        (sp.blockPlayers ? count = count + sp.blockPlayers.filter(bp => bp ===
+                                        player.playerId).length : count = 0) }, 0); %> <% let
+                                            turnovers=data2.scoredPoints.reduce((count, sp)=> { return
+                                            (sp.turnoverPlayers ? count = count + sp.turnoverPlayers.filter(tp =>
+                                            tp === player.playerId).length : count = 0) }, 0); %> <% if (goals> 0
+                                                ) { %>
+                                                <span class="score-indicator yellow-dot">
+                                                   <%-goals%>
+                                                </span>
+                                                <% } else { %>
+                                                    <span class="score-indicator"></span>
+                                                    <% } %>
+                                                        <% if (assists> 0 ) { %>
+                                                            <span class="score-indicator blue-dot">
+                                                                <%- assists %>
+                                                            </span>
+                                                            <% } else { %>
+                                                                <span class="score-indicator"></span>
+                                                                <% } %>
+                                                                    <% if (blocks> 0 ) { %>
+                                                                        <span class="score-indicator black-dot">
+                                                                            <%- blocks %>
+                                                                        </span>
+                                                                        <% } else { %>
+                                                                            <span class="score-indicator"></span>
+                                                                            <% } %>
+                                                                                <% if (turnovers> 0 ) { %>
+                                                                                    <span
+                                                                                        class="score-indicator grey-dot">
+                                                                                        <%- turnovers %>
+                                                                                    </span>
+                                                                                    <% } else { %>
+                                                                                        <span
+                                                                                            class="score-indicator"></span>
+                                                                                        <% } %>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                </article>
+                <% }) %>
     </div>
+</div>

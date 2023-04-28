@@ -40,22 +40,37 @@ aside {
     width: 15%;
     height: 100%;
     background-color: var(--c-white);
+    transition: .2s;
+}
+
+.toggle-sidebar {
+    width: 5%;
 }
 
 main {
     width: 85%;
     float: left;
     height: 100%;
+    transition: .2s;
+
+}
+
+.toggle-sidebar-main {
+    width: 95%;
 }
 
 /* Styling sidebar */
 .inner-sidebar {
     padding: var(--outerSpacing);
+    display: flex;
+    align-items: left;
+    flex-direction: column;
 }
 
 .logo {
     margin-top: var(--outerSpacing);
     width: 90%;
+    transition: .2s;
 }
 
 /* typography */
@@ -68,39 +83,6 @@ p {
     margin: 0;
 }
 
-.main-menu {
-    margin: 15% 0px;
-    padding: 0;
-}
-
-.menu-button {
-    display: flex;
-    flex-direction: row;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    align-items: center;
-    width: 100%;
-    height: 2.5rem;
-}
-
-.menu-button:hover h4 {
-    color: var(--c-blue);
-}
-
-
-.menu-icon {
-    margin-right: 10%;
-}
-
-.menu-button:hover .menu-icon {
-    fill: var(--c-blue);
-}
-
-.main-menu-item {
-    list-style-type: none;
-}
 
 h4 {
     font-family: var(--secondairFont);
@@ -365,10 +347,15 @@ h4 {
     margin-top: 1.3rem;
 }
 
+.score-game p {
+    width: 220%;
+}
+
 .image-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    max-width: 45%;
 }
 
 .image-container p {
@@ -504,7 +491,11 @@ h4 {
     border-radius: 3px;
     margin: 2.5% 10px;
     background-color: var(--c-mediumGray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 .line {
     border-bottom: 1px solid var(--c-mediumGray);
@@ -514,6 +505,8 @@ h4 {
     background-color: var(--c-lightGray);
     border: 1.5px solid var(--c-yellow);
     color: var(--c-yellow);
+    text-align: center;
+
 }
 
 .blue-dot {
@@ -673,6 +666,96 @@ td span {
 .d-block {
     display: block;
 }
+
+.main-menu {
+    margin: 15% 0px;
+    padding: 0;
+}
+
+.menu-button {
+    display: flex;
+    flex-direction: row;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    align-items: center;
+    width: 100%;
+    height: 2.5rem;
+    transform: translateX(-10%);
+    transition: .2s;
+}
+
+.menu-button:hover {
+    border-left: 4px solid var(--c-blue);
+}
+
+.menu-button:hover h4 {
+    color: var(--c-blue);
+}
+
+.menu-button:focus h4 {
+    color: var(--c-blue);
+}
+
+.menu-button:focus {
+    border-left: 4px solid var(--c-blue);
+}
+
+.menu-icon {
+    margin-right: 10%;
+    margin-left: 15%;
+    transition: .2s;
+    fill: #C1C1C1;
+}
+
+.bigger-icons {
+    width: 120%;
+}
+
+.remove-logo {
+    transform: translateX(100px);
+}
+
+.menu-button:hover .menu-icon {
+    fill: var(--c-blue);
+}
+
+.menu-button:focus .menu-icon {
+    fill: var(--c-blue);
+}
+
+.remove-button-text {
+    display: none;
+}
+
+.main-menu-item {
+    list-style-type: none;
+}
+
+.menu-toggle-button {
+    position: absolute;
+    bottom: 3%;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    align-items: center;
+    width: 0%;
+    transition: .3s;
+}
+
+.menu-toggle-button svg {
+    transition: .2s;
+}
+
+.menu-toggle-button:hover svg {
+    transform: translateX(2px);
+}
+
+.rotate-button {
+    transform: rotate(180deg) translateX(-20px);
+}
+
 
 /* Styling styleguide */
 .styleguide-container {

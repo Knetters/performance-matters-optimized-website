@@ -39,3 +39,32 @@ document.getElementById("plus-button").addEventListener("click", toggleBlockOn);
 function toggleBlockOn() {
     quoteBlock.classList.toggle("d-none")
 }
+
+
+// menu in en uitklappen
+const menuToggle = document.querySelector('.menu-toggle-button')
+const sidebarToggle = document.querySelector('aside')
+const mainToggle = document.querySelector('main')
+const removeButtonText = document.querySelectorAll('.menu-button-text')
+const biggerIcons1 = document.querySelector('.menu-icon1')
+const biggerIcons2 = document.querySelector('.menu-icon2')
+const biggerIcons3 = document.querySelector('.menu-icon3')
+const ultiLogo = document.querySelector('.logo')
+
+
+
+
+menuToggle.addEventListener ('click', toggleMenu)
+
+function toggleMenu() {
+    sidebarToggle.classList.toggle ('toggle-sidebar')
+    mainToggle.classList.toggle ('toggle-sidebar-main')
+    removeButtonText.forEach((removeButtonText) => {
+        removeButtonText.classList.toggle ('remove-button-text')
+    });
+    biggerIcons1.classList.toggle ('bigger-icons')
+    biggerIcons2.classList.toggle ('bigger-icons')
+    biggerIcons3.classList.toggle ('bigger-icons')
+    ultiLogo.classList.toggle ('remove-logo')
+    menuToggle.classList.toggle ('rotate-button')
+}
