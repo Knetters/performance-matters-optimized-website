@@ -68,3 +68,4 @@ function toggleMenu() {
     ultiLogo.classList.toggle ('remove-logo')
     menuToggle.classList.toggle ('rotate-button')
 }
+// Edit player
