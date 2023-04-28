@@ -14,10 +14,10 @@
                 <article id="<%= player.playerId %>" class="player-line">
                     <div class="player-info">
                         <p class="jersey-number">
-                            <%= player.jerseyNumber %>.
+                            <span class="editable" contenteditable="true" data-field="jerseyNumber" data-playerid="<%= player.playerId %>"><%= player.jerseyNumber %></span>.
                         </p>
                         <p class="player-text">
-                            <%= player.name %>
+                            <span class="editable" contenteditable="true" data-field="name" data-playerid="<%= player.playerId %>"><%= player.name %></span>
                         </p>
                         <div class="score-indicators">
                             <% let goals=data2.scoredPoints.filter(sp=> sp.scoredBy ===
