@@ -80,6 +80,14 @@ h2 {
     padding: 0;
 }
 
+h4 {
+    margin: 0;
+}
+
+.team-container h4 {
+    color: var(--c-blue);
+}
+
 p {
     margin: 0;
 }
@@ -684,6 +692,10 @@ td span {
     list-style-type: none;
 }
 
+.main-menu a {
+    text-decoration: none;
+}
+
 .menu-toggle-button {
     position: absolute;
     bottom: 3%;
@@ -778,6 +790,25 @@ pre {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 8px;
 }
 
+/* Styling team page /teams.ejs */
+.team-container {
+    height: 100%;
+    width: 100%;
+    gap: var(--outerSpacing);
+    display: flex;
+    border-radius: var(--outerSpacing);
+    padding: var(--outerSpacing);
+    background-color: var(--c-lightGray);
+}
+
+.team-list {
+    width: 50%;
+}
+
+.selected-player-list {
+    width: 50%;
+}
+
 /* Styling tablet vertial */
 @media only screen and (max-width: 1000px) {
     body,html {
@@ -829,16 +860,17 @@ pre {
     }
 }
 
-/* @media only screen and (max-width: 700px) {
-    body,html {
-        overflow-y: scroll;
+/* Styling phone vertial */
+@media only screen and (max-width: 700px) {
+    aside {
+        width: 10%;
+    }
+    
+    main {
+        width: 90%;
     }
 
-    aside {
+    .title-bar, .player-list-1, .player-list-2 {
         display: none;
     }
-
-    main {
-        width: 100%;
-    }
-} */
+}
