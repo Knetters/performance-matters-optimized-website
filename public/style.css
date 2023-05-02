@@ -34,7 +34,7 @@ html {
     background-color: var(--c-white);
     display: flex;
     flex-direction: row;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 aside {
@@ -70,7 +70,7 @@ main {
 
 .logo {
     margin-top: var(--outerSpacing);
-    width: 90%;
+    width: 10vw;
     transition: .2s;
 }
 
@@ -149,7 +149,6 @@ h4 {
 .player-list-2 {
     grid-area: player-list-2;
     position: relative;
-
 }
 
 .score-list {
@@ -190,56 +189,6 @@ h4 {
     text-transform: uppercase;
     margin-left: var(--innerSpacing);
 }
-
-/* 
-.marquee-container {
-    overflow: hidden;
-    height: 40px;
-    width: 100%;
-}
-
-.marquee-container ul {
-    list-style: none;
-    padding: 0;
-}
-
-#marquee {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-}
-  
-#m1 {
-    width: 100%;
-    display: inline-block;
-    animation: marquee 20s linear infinite;
-}
-  
-#m2 {
-    width: 100%;
-    display: inline-block;
-    animation: marquee2 20s linear infinite;
-    animation-delay: 10s;
-}
-  
-@keyframes marquee {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(-100%);
-    }
-}
-  
-@keyframes marquee2 {
-    from {
-      transform: translateX(0%);
-    }
-    to {
-      transform: translateX(-200%);
-    }
-} */
-
 
 /* MARQUEE */
 .marquee {
@@ -342,14 +291,14 @@ h4 {
 }
 
 .score-game {
-    font-size: 4.5rem;
+    font-size: 4.5vw;
     font-family: var(--secondairFont);
     font-weight: 700;
     margin-top: 1.3rem;
 }
 
 .score-game p {
-    width: 220%;
+    width: max-content;
 }
 
 .image-container {
@@ -446,8 +395,6 @@ h4 {
     font-size: 8px;
     gap: 8.5px;
 }
-
-.player-line {}
 
 .player-line:hover {
     background-color: var(--c-lightGray);
@@ -833,38 +780,57 @@ pre {
 }
 
 /* Styling tablet vertial */
-/* @media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1000px) {
     body,html {
-        overflow-y: scroll;
-    } 
+        margin: 0;
+        width: 100%;
+        font-family: var(--primaryFont);
+        background-color: var(--c-white);
+        display: flex;
+        flex-direction: row;
+    }
 
     aside {
-        display: none;
+        width: 15%;
     }
-
+    
     main {
-        width: 100%;
+        width: 85%;
     }
 
+    .background-container {
+        background-color: var(--c-white);
+        padding: var(--outerSpacing) 0 var(--outerSpacing) var(--outerSpacing);
+    }
+    
     .main-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto 1fr 1fr;
+        grid-template-rows: auto auto 1fr 1fr 1fr;
         grid-auto-flow: row;
-        height: 100%;
+        height: auto;
         border-radius: var(--outerSpacing);
         padding: var(--outerSpacing);
         gap: var(--outerSpacing);
         background-color: var(--c-lightGray);
         grid-template-areas:
-            "title-bar title-bar title-bar title-bar"
+            "title-bar title-bar"
             "game-score game-score"
-            "score-list score-list"
-            "player-list-1 player-list-2";
+            "player-list-1 player-list-1"
+            "player-list-2 player-list-2"
+            "score-list score-list";
+    }
+
+    .title-block {
+        width: 85%;
+    }
+
+    .live-block {
+        width: 15%;
     }
 }
 
-@media only screen and (max-width: 700px) {
+/* @media only screen and (max-width: 700px) {
     body,html {
         overflow-y: scroll;
     }
