@@ -305,7 +305,6 @@ h4 {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    max-width: 45%;
 }
 
 .image-container p {
@@ -320,7 +319,7 @@ h4 {
     width: 6.5rem;
     height: auto;
     display: flex;
-    margin: 0 8rem 1rem 8rem;
+    margin: 0 0 1rem 0;
     align-items: center;
 }
 
