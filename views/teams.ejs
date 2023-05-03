@@ -5,13 +5,37 @@
             <div class="team-grid">
                 <div class="panel team-list">
                     <h4>Teams</h4>
+                    <div class="teams-container scroll-container">
+
+                    </div>
                 </div>
                 <div class="panel team-info">
-                    <p>team-into</p>
+                    <div class="flex-container-horizontal">
+                        <div class="team-info-box">
+                            <h1><%= data1.team1Name %></h1>
+                            <ul>
+                                <li>Team id: <%= data1.team1TeamId %></li>
+                                <li>Country: <%= data1.team1CountryName %> (<%= data1.team1CountryISO3Code %>)</li>
+                            </ul>
+                        </div>
+                        <div class="team-info-box conter-content">
+                            <span>Win-loss ratio:</span>
+                            <p>78%</p>
+                        </div>
+                        <div class="team-info-box conter-content">
+                            <span>Games won:</span>
+                            <p>14</p>
+                        </div>
+                        <div class="team-info-box conter-content">
+                            <span>Team size:</span>
+                            <% let numPlayers = data4.players.length %>
+                            <p><%= numPlayers %></p>
+                        </div>
+                    </div>
                 </div>
                 <div class="panel team-players">
                     <div class="team-players-header">
-                        <h4 class="team-players-title"><%= data1.team1Name %></h4>
+                        <h4 class="team-players-title">Players</h4>
                         <div class="team-players-add-container">
                             <p><span class="team-player-add-button"><i class="fa fa-plus" aria-hidden="true"></i> Add new player</span></p>
                         </div>
@@ -23,7 +47,7 @@
                                 <div class="player-info">
                                     <p class="jersey-number"><%= player.jerseyNumber %>.</p>
                                     <p class="player-text"><%= player.name %></p>
-                                    <p><%= player.gender %></p>
+                                    <p><%= player.gender.length > 2 ? '' : player.gender %></p>
                                 </div>
                                 <div class="line"></div>
                             </article>
@@ -31,7 +55,9 @@
                     </div>
                 </div>
                 <div class="panel team-details">
-                    <p>team-details</p>
+                    <div class="team-club-container">
+                        <img class="team-club-image" src="/static/img/empire_logo.png">
+                    </div>
                 </div>
                 <div class="panel team-settings">
                     <p>team-settings</p>

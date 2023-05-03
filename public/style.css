@@ -21,6 +21,23 @@
     --secondairFont: 'Chakra Petch', sans-serif;
 }
 
+/* Hide scrollbar on all elements */
+::-webkit-scrollbar {
+    display: none;
+} 
+
+/* Hide scrollbar on all elements */
+* {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+  
+*::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+  
+
 * {
     box-sizing: border-box;
 }
@@ -75,6 +92,11 @@ main {
 }
 
 /* typography */
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
 h2 {
     margin: 0;
     padding: 0;
@@ -846,6 +868,51 @@ pre {
     color: var(--c-blue);
     cursor: pointer;
     transform: translateX(1rem);
+}
+
+.team-info-box {
+    width: 25%;  
+}
+
+.conter-content {
+    height: 9rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.team-info-box span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: var(--innerSpacing) var(--outerSpacing);
+    transition: .2s;
+}
+
+.team-info-box p {
+    text-align: center;
+    width: 100%;
+    font-size: 5rem;
+    font-weight: 500;
+    font-family: var(--secondairFont);
+    padding-top: var(--outerSpacing);
+}
+
+.team-info-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.team-club-container {
+    height: 35vh;
+    display: flex;
+    align-items: center;
+}
+
+.team-club-image {
+    width: 12vw;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Styling tablet vertial */
