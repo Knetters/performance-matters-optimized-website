@@ -844,7 +844,7 @@ pre {
     height: 95%;
 }
 
-.team-players-header {
+.team-header {
     width: 100%;
     display: flex;
     margin-bottom: var(--innerSpacing);
@@ -913,6 +913,35 @@ pre {
     width: 12vw;
     margin-left: auto;
     margin-right: auto;
+}
+
+.team-line {
+    width: 100%;
+    border-bottom: 1px solid var(--c-mediumGray);
+    padding: var(--innerSpacing) 0;
+}
+
+.team-line:hover {
+    background-color: var(--c-lightGray);
+    cursor: pointer;
+}
+
+.team-line-id {
+    width: 10%;
+}
+
+.team-line-name {
+    width: 40%;
+}
+
+.team-line-options {
+    width: 50%;
+    text-align: right;
+    color: var(--c-darkGray);
+}
+
+.team-line:hover .team-line-options {
+    color: var(--c-blue);
 }
 
 /* Styling tablet vertial */

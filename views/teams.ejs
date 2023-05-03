@@ -4,9 +4,25 @@
         <div class="background-container">
             <div class="team-grid">
                 <div class="panel team-list">
-                    <h4>Teams</h4>
+                    <div class="team-header">
+                        <h4 class="team-players-title">Players</h4>
+                        <div class="team-players-add-container">
+                            <p><span class="team-player-add-button"><i class="fa fa-plus" aria-hidden="true"></i> New team</span></p>
+                        </div>
+                    </div>
                     <div class="teams-container scroll-container">
-
+                        <% for (var i = 0; i < 100; i++) { %>
+                            <article class="team-line flex-container-horizontal">
+                                <p class="team-line-id jersey-number"><%= data1.team1TeamId %>.</p>
+                                <p class="team-line-name"><%= data1.team1Name %></p>
+                                <p class="team-line-options">View</p>
+                            </article>
+                            <article class="team-line flex-container-horizontal">
+                                <p class="team-line-id jersey-number"><%= data1.team2TeamId %>.</p>
+                                <p class="team-line-name"><%= data1.team2Name %></p>
+                                <p class="team-line-options">View</p>
+                            </article>
+                          <% } %>
                     </div>
                 </div>
                 <div class="panel team-info">
@@ -34,10 +50,10 @@
                     </div>
                 </div>
                 <div class="panel team-players">
-                    <div class="team-players-header">
+                    <div class="team-header">
                         <h4 class="team-players-title">Players</h4>
                         <div class="team-players-add-container">
-                            <p><span class="team-player-add-button"><i class="fa fa-plus" aria-hidden="true"></i> Add new player</span></p>
+                            <p><span class="team-player-add-button"><i class="fa fa-plus" aria-hidden="true"></i> New player</span></p>
                         </div>
                     </div>
 
