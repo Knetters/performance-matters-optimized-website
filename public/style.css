@@ -106,6 +106,10 @@ h4 {
     margin: 0;
 }
 
+.past-games h4 {
+    margin-bottom: var(--outerSpacing);
+}
+
 .team-grid h4 {
     color: var(--c-blue);
 }
@@ -826,7 +830,7 @@ pre {
     grid-template-areas:
       "team-list team-info team-info"
       "team-list team-players team-details"
-      "team-list team-players team-settings";
+      "team-list team-players past-games";
   }
   
   .team-list { grid-area: team-list; }
@@ -837,7 +841,7 @@ pre {
   
   .team-details { grid-area: team-details; }
   
-  .team-settings { grid-area: team-settings; }
+  .past-games { grid-area: past-games; }
 
 .scroll-container {
     overflow-y: scroll;
@@ -942,6 +946,30 @@ pre {
 
 .team-line:hover .team-line-options {
     color: var(--c-blue);
+}
+
+.past-game {
+    width: 100%;
+    padding: var(--innerSpacing) 0;
+    margin-bottom: var(--innerSpacing);
+}
+
+.past-game-name {
+    width: 85%;
+}
+
+.past-game-score {
+    width: 15%;
+    text-align: right;
+    padding-right: var(--outerSpacing);
+}
+
+.win {
+    box-shadow: inset -.5rem 0rem 0rem 0rem var(--c-green);
+}
+
+.loss {
+    box-shadow: inset -.5rem 0rem 0rem 0rem var(--c-red);
 }
 
 /* Styling tablet vertial */

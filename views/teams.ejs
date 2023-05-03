@@ -75,8 +75,22 @@
                         <img class="team-club-image" src="/static/img/empire_logo.png">
                     </div>
                 </div>
-                <div class="panel team-settings">
-                    <p>team-settings</p>
+                <div class="panel past-games">
+                    <h4>Game history</h4>
+                    <div class="scroll-container">
+                        <article class="win past-game flex-container-horizontal">
+                            <p class="past-game-name"><%= data1.field %> <%= data1.gameStatus %> <%= data1.division %></p>
+                            <p class="past-game-score">14-9</p>
+                        </article>
+                        <article class="win past-game flex-container-horizontal">
+                            <p class="past-game-name"><%= data1.field %> <%= data1.gameStatus %> <%= data1.division %></p>
+                            <p class="past-game-score">14-11</p>
+                        </article>
+                        <article class="loss past-game flex-container-horizontal">
+                            <p class="past-game-name"><%= data1.field %> <%= data1.gameStatus %> <%= data1.division %></p>
+                            <p class="past-game-score">10-14</p>
+                        </article>
+                    </div>
                 </div>
             </div>
         </div>
