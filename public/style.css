@@ -84,7 +84,7 @@ h4 {
     margin: 0;
 }
 
-.team-container h4 {
+.team-grid h4 {
     color: var(--c-blue);
 }
 
@@ -816,6 +816,37 @@ pre {
   .team-details { grid-area: team-details; }
   
   .team-settings { grid-area: team-settings; }
+
+.scroll-container {
+    overflow-y: scroll;
+    height: 95%;
+}
+
+.team-players-header {
+    width: 100%;
+    display: flex;
+    margin-bottom: var(--innerSpacing);
+}
+
+.team-players-title {
+    width: 50%;
+}
+
+.team-players-add-container {
+    width: 50%;
+    text-align: right;
+}
+
+.team-player-add-button {
+    color: var(--c-darkGray);
+    transition: .2s;
+}
+
+.team-player-add-button:hover {
+    color: var(--c-blue);
+    cursor: pointer;
+    transform: translateX(1rem);
+}
 
 /* Styling tablet vertial */
 @media only screen and (max-width: 1000px) {

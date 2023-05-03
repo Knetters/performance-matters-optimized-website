@@ -4,13 +4,31 @@
         <div class="background-container">
             <div class="team-grid">
                 <div class="panel team-list">
-                    <p>team-list</p>
+                    <h4>Teams</h4>
                 </div>
                 <div class="panel team-info">
                     <p>team-into</p>
                 </div>
                 <div class="panel team-players">
-                    <p>team-players</p>
+                    <div class="team-players-header">
+                        <h4 class="team-players-title"><%= data1.team1Name %></h4>
+                        <div class="team-players-add-container">
+                            <p><span class="team-player-add-button"><i class="fa fa-plus" aria-hidden="true"></i> Add new player</span></p>
+                        </div>
+                    </div>
+
+                    <div class="team-players-container scroll-container">
+                        <% data4.players.forEach(player => { %> <%# Player card %>
+                            <article id="<%= player.playerId %>" class="player-line">
+                                <div class="player-info">
+                                    <p class="jersey-number"><%= player.jerseyNumber %>.</p>
+                                    <p class="player-text"><%= player.name %></p>
+                                    <p><%= player.gender %></p>
+                                </div>
+                                <div class="line"></div>
+                            </article>
+                        <% }) %>
+                    </div>
                 </div>
                 <div class="panel team-details">
                     <p>team-details</p>
