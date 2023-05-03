@@ -1,45 +1,50 @@
 // Tijd aftellen
-var countDownDate = new Date().getTime() + 40*60*1000
-var x = setInterval(function() {
+const timerContainer = document.getElementById("time-box-container")
 
-    var now = new Date().getTime()
-    var distance = countDownDate - now
+if(timerContainer) {
+    var countDownDate = new Date().getTime() + 40*60*1000
+    var x = setInterval(function() {
 
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000)
+        var now = new Date().getTime()
+        var distance = countDownDate - now
 
-    if (minutes < 10) { minutes = "0" + minutes; }
-    if (seconds < 10) { seconds = "0" + seconds; }
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000)
 
-    // Zet de minuten en seconden in de html
-    document.getElementById("timer").innerHTML = minutes + ":" + seconds
+        if (minutes < 10) { minutes = "0" + minutes; }
+        if (seconds < 10) { seconds = "0" + seconds; }
 
-    if (distance <= 0) {
-        clearInterval(x)
-        document.getElementById("timer").innerHTML = "0:00"
-    }
+        // Zet de minuten en seconden in de html
+        document.getElementById("timer").innerHTML = minutes + ":" + seconds
 
-}, 1000)
+        if (distance <= 0) {
+            clearInterval(x)
+            document.getElementById("timer").innerHTML = "0:00"
+        }
+
+    }, 1000)
+}
 
 // Quote panel toggelen
 const quoteBlock = document.getElementById("quote-block")
 const plusButton = document.getElementById("plus-button")
 
 // Min knop function
-document.getElementById("min-button").addEventListener("click", toggleBlockOff);
+if(quoteBlock) {
+    document.getElementById("min-button").addEventListener("click", toggleBlockOff);
 
-function toggleBlockOff() {
-    quoteBlock.classList.toggle("d-none")
-    plusButton.classList.toggle("d-block")
+    function toggleBlockOff() {
+        quoteBlock.classList.toggle("d-none")
+        plusButton.classList.toggle("d-block")
+    }
+
+    document.getElementById("plus-button").addEventListener("click", toggleBlockOn);
+
+    // Plus knop function
+    function toggleBlockOn() {
+        quoteBlock.classList.toggle("d-none")
+    }
 }
-
-document.getElementById("plus-button").addEventListener("click", toggleBlockOn);
-
-// Plus knop function
-function toggleBlockOn() {
-    quoteBlock.classList.toggle("d-none")
-}
-
 
 // menu in en uitklappen
 const menuToggle = document.querySelector('.menu-toggle-button')
@@ -68,4 +73,15 @@ function toggleMenu() {
     ultiLogo.classList.toggle ('remove-logo')
     menuToggle.classList.toggle ('rotate-button')
 }
-// Edit player
+
+// Add player
+const addPlayerButton = document.getElementById("add-player-button")
+const teamPlayers = document.getElementById("teamPlayers")
+const playerForm = document.getElementById("playerForm")
+
+addPlayerButton.addEventListener ("click", toggleForm)
+
+function toggleForm() {
+    teamPlayers.classList.toggle("d-none")
+    playerForm.classList.toggle("active")
+}

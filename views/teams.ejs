@@ -50,25 +50,71 @@
                     </div>
                 </div>
                 <div class="panel team-players">
-                    <div class="team-header">
-                        <h4 class="team-players-title">Players</h4>
-                        <div class="team-players-add-container">
-                            <p><span class="team-player-add-button"><i class="fa fa-plus" aria-hidden="true"></i> New player</span></p>
+                    <article id="teamPlayers">
+                        <div class="team-header">
+                            <h4 class="team-players-title">Players</h4>
+                            <div class="team-players-add-container">
+                                <p><span id="add-player-button" class="team-player-add-button"><i class="fa fa-plus" aria-hidden="true"></i> New player</span></p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="team-players-container scroll-container">
-                        <% data4.players.forEach(player => { %> <%# Player card %>
-                            <article id="<%= player.playerId %>" class="player-line">
-                                <div class="player-info">
-                                    <p class="jersey-number"><%= player.jerseyNumber %>.</p>
-                                    <p class="player-text"><%= player.name %></p>
-                                    <p><%= player.gender.length > 2 ? '' : player.gender %></p>
-                                </div>
-                                <div class="line"></div>
-                            </article>
-                        <% }) %>
-                    </div>
+                        <%# Looped player list %>
+                        <div class="team-players-container scroll-container">
+                            <% data4.players.forEach(player => { %>
+                                <article id="<%= player.playerId %>" class="player-line">
+                                    <div class="player-info">
+                                        <p class="jersey-number"><%= player.jerseyNumber %>.</p>
+                                        <p class="player-text"><%= player.name %></p>
+                                        <p><%= player.gender.length > 2 ? '' : player.gender %></p>
+                                    </div>
+                                    <div class="line"></div>
+                                </article>
+                            <% }) %>
+                        </div>
+                    </article>
+
+                    <article id="playerForm" class="player-form-container">
+                        <div class="team-header">
+                            <h4 class="team-players-title">Add player</h4>
+                            <div class="team-players-add-container">
+                                <p><span id="add-player-button" class="team-player-add-button"><i class="fa fa-times" aria-hidden="true"></i> Cancel</span></p>
+                            </div>
+                        </div>
+
+                        <%# New player form %>
+                        <form action="/teamInfo" method="POST" name="newPlayer" class="player-form">
+                            <div class="inner-form">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" placeholder="" value="<%= locals.values?.name ?? '' %>" required>
+                            
+                                <label for="name">gender</label>
+                                <input type="text" name="gender" placeholder="" value="<%= locals.values?.gender ?? '' %>" required>
+                            
+                                <label for="name">jerseyNumber</label>
+                                <input type="number" min="1" max="99" name="jerseyNumber" placeholder="" value="<%= locals.values?.jerseyNumber ?? '' %>" required>
+                            
+                                <label for="name">Team</label>
+                                <input type="text" name="team" placeholder="" value="<%= locals.values?.team ?? '' %>" required>
+                            
+                                <label>Questions</label>
+                                <select name="question" required>
+
+                                    <option disabled selected>Select</option>
+
+                                    <% data5.questions.forEach(question => { %>
+                                        <option value="<%= question.id %>"><%= question.title %></option>
+                                    <% }) %>
+
+                                </select>
+
+                                <label>Answer</label>
+                                <input  type="text" name="content" value="<%= locals.values?.content ?? ''%>" required>
+                            
+                                <input type="submit" value="Submit" />
+                            </div>
+                        </form>
+                        
+                    </article>
                 </div>
                 <div class="panel team-details">
                     <div class="team-club-container">

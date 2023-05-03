@@ -51,7 +51,7 @@ html {
     background-color: var(--c-white);
     display: flex;
     flex-direction: row;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 aside {
@@ -970,6 +970,28 @@ pre {
 
 .loss {
     box-shadow: inset -.5rem 0rem 0rem 0rem var(--c-red);
+}
+
+#teamPlayers {
+    height: 100%;
+}
+
+.player-form-container {
+    margin-top: 100rem;
+    transition: .2s;
+}
+
+.active {
+    margin-top: 0;
+}
+
+/* Styling new player form */
+form {
+    width: 100%;
+}
+
+input {
+    width: 100%;
 }
 
 /* Styling tablet vertial */
