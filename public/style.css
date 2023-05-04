@@ -874,6 +874,17 @@ pre {
     transform: translateX(1rem);
 }
 
+.team-add-button {
+    color: var(--c-darkGray);
+    transition: .2s;
+}
+
+.team-add-button:hover {
+    color: var(--c-blue);
+    cursor: not-allowed;
+    transform: translateX(1rem);
+}
+
 .team-info-box {
     width: 25%;  
 }
