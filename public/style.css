@@ -1021,7 +1021,7 @@ label {
     font-size: .8rem;
 }
 
-input {
+input, select {
     width: 100%;
     border: none;
     border-bottom: solid 1px var(--c-mediumGray);
@@ -1030,7 +1030,7 @@ input {
     margin-bottom: var(--innerSpacing);
 }
 
-input:focus {
+input:focus, select:focus {
     outline: none;
 }
 

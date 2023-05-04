@@ -104,14 +104,32 @@ app.post('/newPlayer', async function  (request, response) {
   });
 
   // Wait for the post request to complete before fetching the updated data
-  postResponse.json().then(() => {
-    fetchJson(apiUrl).then((data) => {
-      // Combine the url into one data type to send in the view.
-      const newData = {data1, data2, data3, data4, data5};
-      // Render the updated data
-      response.render('teams', newData);
-    });
-  });
+  await postResponse.json();
+
+  // Continuously poll the API until the data is updated
+  const pollInterval = 2000; // in milliseconds
+  let isDataUpdated = false;
+  while (!isDataUpdated) {
+    // Fetch the data from the API
+    const [newData1, newData2, newData3, newData4, newData5] = await Promise.all(urls.map(fetchJson));
+    const newData = { data1: newData1, data2: newData2, data3: newData3, data4: newData4, data5: newData5 };
+    
+    // Check if the data has been updated
+    if (JSON.stringify(newData) !== JSON.stringify(data)) {
+      data.data1 = newData.data1;
+      data.data2 = newData.data2;
+      data.data3 = newData.data3;
+      data.data4 = newData.data4;
+      data.data5 = newData.data5;
+      isDataUpdated = true;
+    } else {
+      // Wait for some time before polling again
+      await new Promise(resolve => setTimeout(resolve, pollInterval));
+    }
+  }
+  
+  // Render the updated data
+  response.render('teams', data);
 });
 
 // -------------------- Start local host ---------------------

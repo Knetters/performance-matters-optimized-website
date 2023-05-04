@@ -101,7 +101,7 @@
 
                                 <label for="question">Questions <span>*</span></label>
                                 <select name="question" required>
-                                    <option disabled selected>Select</option>
+                                    <option disabled selected></option>
                                     <% data5.questions.forEach(question => { %>
                                         <option value="<%= question.id %>"><%= question.title %></option>
                                     <% }) %>
