@@ -57,6 +57,12 @@ app.get('/playerInfo/:id', (request, response) => {
   });
 });
 
+// Create a route for the index page
+app.get('/stats', async function (request, response) {
+  // Render the stats with the data.
+  response.render('stats', data);
+});
+
 // Create a route for the styleguide page
 app.get('/styleguide', async function (request, response) {
   response.render('styleguide');
@@ -71,7 +77,7 @@ app.get('/teams', async function (request, response) {
 // Handle form submission
 app.post('/newPlayer', async function  (request, response) {
   // Extract the form data from the request body
-  const { name, gender, jerseyNumber, image, team } = request.body;
+  const { name, gender, jerseyNumber, image, team, question, content } = request.body;
   
   // Construct the request body in the desired format
   const requestBody = {
@@ -80,6 +86,12 @@ app.post('/newPlayer', async function  (request, response) {
     "jerseyNumber": jerseyNumber,
     "image": image,
     "team": team,
+    "answers": [
+      {
+        "content": content,
+        "questionId": question
+      }
+    ]
   };
   
   // Make a POST request to the API endpoint

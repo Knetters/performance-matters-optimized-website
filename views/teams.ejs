@@ -82,7 +82,7 @@
                         </div>
 
                         <%# New player form %>
-                        <form action="/newPlayer" method="POST" name="newPlayer" class="player-form">
+                        <form action="/newPlayer" method="POST" name="newPlayer">
                             <div class="inner-form">
                                 <label for="name">Name <span>*</span></label>
                                 <input type="text" name="name" placeholder="" value="<%= locals.values?.name ?? '' %>" required>
@@ -98,6 +98,18 @@
                             
                                 <label for="team">Team <span>*</span></label>
                                 <input type="text" name="team" placeholder="" value="<%= locals.values?.team ?? '' %>" required>
+
+                                <label for="question">Questions <span>*</span></label>
+                                <select name="question" required>
+                                    <option disabled selected>Select</option>
+                                    <% data5.questions.forEach(question => { %>
+                                        <option value="<%= question.id %>"><%= question.title %></option>
+                                    <% }) %>
+
+                                </select>
+
+                                <label for="answer">Answer <span>*</span></label>
+                                <input  type="text" name="content" value="<%= locals.values?.content ?? ''%>" required>
                             
                                 <button type="submit" value="Submit">Submit</button>
                             </div>
