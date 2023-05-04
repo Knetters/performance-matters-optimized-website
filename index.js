@@ -57,12 +57,6 @@ app.get('/playerInfo/:id', (request, response) => {
   });
 });
 
-// Create a route for the index page
-app.get('/stats', async function (request, response) {
-  // Render the stats with the data.
-  response.render('stats', data);
-});
-
 // Create a route for the styleguide page
 app.get('/styleguide', async function (request, response) {
   response.render('styleguide');
@@ -74,29 +68,18 @@ app.get('/teams', async function (request, response) {
   response.render('teams', data);
 });
 
-// Create a route for the team info page
-app.get('/teamInfo', async function (request, response) {
-  // Render the teamInfo with the data.
-  response.render('teamInfo', data);
-});
-
 // Handle form submission
-app.post('/postPlayerInfo', async function  (request, response) {
+app.post('/newPlayer', async function  (request, response) {
   // Extract the form data from the request body
-  const { name, gender, jerseyNumber, team, question, content } = request.body;
+  const { name, gender, jerseyNumber, image, team } = request.body;
   
   // Construct the request body in the desired format
   const requestBody = {
     "name": name,
     "gender": gender,
     "jerseyNumber": jerseyNumber,
+    "image": image,
     "team": team,
-    "answers": [
-      {
-        "content": content,
-        "questionId": question
-      }
-    ]
   };
   
   // Make a POST request to the API endpoint
@@ -108,21 +91,16 @@ app.post('/postPlayerInfo', async function  (request, response) {
     body: JSON.stringify(requestBody)
   });
 
-  // Wait for all the data to load and map it.
-  const [data1, data2, data3, data4, data5] = await Promise.all(urls.map(fetchJson));
-  // Combine the url into one data type to send in the view.
-  const data = {data1, data2, data3, data4, data5};
-
-  postJson(url, request.body).then((data) => {
-    // If the post is succes, render this
-    if (data.message == 'Succes') {
-      response.redirect(`/teamInfo/?Posted=true`)
-    // If not, render this
-    } else {
-      response.redirect(`/teamInfo/?Posted=false`)
-    }
-  })
-})
+  // Wait for the post request to complete before fetching the updated data
+  postResponse.json().then(() => {
+    fetchJson(apiUrl).then((data) => {
+      // Combine the url into one data type to send in the view.
+      const newData = {data1, data2, data3, data4, data5};
+      // Render the updated data
+      response.render('teams', newData);
+    });
+  });
+});
 
 // -------------------- Start local host ---------------------
 

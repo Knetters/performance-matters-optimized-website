@@ -76,10 +76,12 @@ function toggleMenu() {
 
 // Add player
 const addPlayerButton = document.getElementById("add-player-button")
+const closePlayerButton = document.getElementById("close-player-button")
 const teamPlayers = document.getElementById("teamPlayers")
 const playerForm = document.getElementById("playerForm")
 
 addPlayerButton.addEventListener ("click", toggleForm)
+closePlayerButton.addEventListener ("click", toggleForm)
 
 function toggleForm() {
     teamPlayers.classList.toggle("d-none")

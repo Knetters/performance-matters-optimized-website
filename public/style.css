@@ -978,7 +978,6 @@ pre {
 
 .player-form-container {
     margin-top: 100rem;
-    transition: .2s;
 }
 
 .active {
@@ -990,8 +989,38 @@ form {
     width: 100%;
 }
 
+form button {
+    padding: var(--innerSpacing) var(--outerSpacing);
+    border: none;
+    background-color: #6f82ed;
+    border-radius: var(--innerSpacing);
+    color: var(--c-white);
+    transition: .2s;
+}
+
+form button:hover {
+    cursor: pointer;
+}
+
+label {
+    font-size: .8rem;
+}
+
 input {
     width: 100%;
+    border: none;
+    border-bottom: solid 1px var(--c-mediumGray);
+    font-size: 1rem;
+    padding: var(--innerSpacing) 0;
+    margin-bottom: var(--innerSpacing);
+}
+
+input:focus {
+    outline: none;
+}
+
+label span {
+    color: var(--c-red);
 }
 
 /* Styling tablet vertial */
