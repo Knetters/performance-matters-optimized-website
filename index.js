@@ -57,12 +57,6 @@ app.get('/playerInfo/:id', (request, response) => {
   });
 });
 
-// Create a route for the index page
-app.get('/stats', async function (request, response) {
-  // Render the stats with the data.
-  response.render('stats', data);
-});
-
 // Create a route for the styleguide page
 app.get('/styleguide', async function (request, response) {
   response.render('styleguide');
@@ -73,7 +67,7 @@ app.get('/teams', async function (request, response) {
   // Fetch the data from the API
   const [data1, data2, data3, data4, data5] = await Promise.all(urls.map(fetchJson));
   const data = { data1, data2, data3, data4, data5 };
-  
+
   // Render the teams with the data.
   response.render('teams', data);
 });
@@ -110,31 +104,12 @@ app.post('/newPlayer', async function (request, response) {
   // Wait for the post request to complete before fetching the updated data
   await postResponse.json();
 
-  // Continuously poll the API until the data is updated
-  const pollInterval = 2000; // in milliseconds
-  let isDataUpdated = false;
-  while (!isDataUpdated) {
-    // Fetch the data from the API
-    const [newData1, newData2, newData3, newData4, newData5] = await Promise.all(urls.map(fetchJson));
-    const newData = { data1: newData1, data2: newData2, data3: newData3, data4: newData4, data5: newData5 };
-    
-    // Check if the data has been updated
-    if (JSON.stringify(newData) !== JSON.stringify(data)) {
-      // Update the data and set the flag to indicate that the data has been updated
-      data.data1 = newData.data1;
-      data.data2 = newData.data2;
-      data.data3 = newData.data3;
-      data.data4 = newData.data4;
-      data.data5 = newData.data5;
-      isDataUpdated = true;
-    } else {
-      // Wait for some time before polling again
-      await new Promise(resolve => setTimeout(resolve, pollInterval));
-    }
-  }
+  // Fetch the updated data from the API
+  const [newData1, newData2, newData3, newData4, newData5] = await Promise.all(urls.map(fetchJson));
+  const newData = { data1: newData1, data2: newData2, data3: newData3, data4: newData4, data5: newData5 };
 
-  // Render the updated data
-  response.render('teams', data);
+  // Redirect the user to the teams route
+  response.redirect('/teams');
 });
 
 // -------------------- Start local host ---------------------
