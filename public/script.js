@@ -87,3 +87,5 @@ function toggleForm() {
     teamPlayers.classList.toggle("d-none")
     playerForm.classList.toggle("active")
 }
+
+// Show player data when selected

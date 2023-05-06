@@ -70,15 +70,19 @@ app.get('/styleguide', async function (request, response) {
 
 // Create a route for the index page
 app.get('/teams', async function (request, response) {
+  // Fetch the data from the API
+  const [data1, data2, data3, data4, data5] = await Promise.all(urls.map(fetchJson));
+  const data = { data1, data2, data3, data4, data5 };
+  
   // Render the teams with the data.
   response.render('teams', data);
 });
 
 // Handle form submission
-app.post('/newPlayer', async function  (request, response) {
+app.post('/newPlayer', async function (request, response) {
   // Extract the form data from the request body
   const { name, gender, jerseyNumber, image, team, question, content } = request.body;
-  
+
   // Construct the request body in the desired format
   const requestBody = {
     "name": name,
@@ -93,7 +97,7 @@ app.post('/newPlayer', async function  (request, response) {
       }
     ]
   };
-  
+
   // Make a POST request to the API endpoint
   const postResponse = await fetch(postUrl, {
     method: 'POST',
@@ -116,6 +120,7 @@ app.post('/newPlayer', async function  (request, response) {
     
     // Check if the data has been updated
     if (JSON.stringify(newData) !== JSON.stringify(data)) {
+      // Update the data and set the flag to indicate that the data has been updated
       data.data1 = newData.data1;
       data.data2 = newData.data2;
       data.data3 = newData.data3;
@@ -127,7 +132,7 @@ app.post('/newPlayer', async function  (request, response) {
       await new Promise(resolve => setTimeout(resolve, pollInterval));
     }
   }
-  
+
   // Render the updated data
   response.render('teams', data);
 });
