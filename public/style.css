@@ -714,7 +714,7 @@ td span {
     margin-right: 10%;
     margin-left: 15%;
     transition: .2s;
-    fill: #C1C1C1;
+    fill: var(--c-darkGray);
 }
 
 .bigger-icons {
