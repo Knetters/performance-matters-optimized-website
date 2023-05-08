@@ -4,7 +4,10 @@
         <div class="background-container">
             <div class="team-grid">
                 <div class="team-title">
-                    <h1>Title</h1>
+                    <h1>Configure teams</h1>
+                    <div class="panel filter-bar">
+                        <p><input type="text" placeholder="Search team"></p>
+                    </div>
                 </div>
                 <div class="panel team-list">
                     <div class="team-header">
@@ -25,13 +28,13 @@
                                 <p class="team-line-name"><%= data1.team2Name %></p>
                                 <p class="team-line-options"><span>View</span></p>
                             </article>
-                          <% } %>
+                        <% } %>
                     </div>
                 </div>
                 <div class="panel team-info">
                     <div class="flex-container-horizontal">
                         <div class="team-info-box">
-                            <h1><%= data1.team1Name %></h1>
+                            <h2><%= data1.team1Name %></h2>
                             <ul>
                                 <li>Team id: <%= data1.team1TeamId %></li>
                                 <li>Country: <%= data1.team1CountryName %> (<%= data1.team1CountryISO3Code %>)</li>
