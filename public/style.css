@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Epilogue:ital,wght@0,400;0,600;1,400;1,600&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #eee;
+        background: var(--c-dark);
+    }
+}
+
 :root {
     /* Spacing */
     --innerSpacing: .5rem;
@@ -24,19 +32,21 @@
 /* Hide scrollbar on all elements */
 ::-webkit-scrollbar {
     display: none;
-} 
+}
 
 /* Hide scrollbar on all elements */
 * {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 10+ */
 }
-  
+
 *::-webkit-scrollbar {
     width: 0;
     height: 0;
 }
-  
+
 
 * {
     box-sizing: border-box;
@@ -821,7 +831,7 @@ pre {
 }
 
 /* Styling team page /teams.ejs */
-.team-grid {  
+.team-grid {
     display: grid;
     grid-template-columns: 1.1fr 1.1fr 0.8fr;
     grid-template-rows: 0.6fr 1.4fr 1fr;
@@ -832,20 +842,30 @@ pre {
     gap: var(--outerSpacing);
     background-color: var(--c-lightGray);
     grid-template-areas:
-      "team-list team-info team-info"
-      "team-list team-players team-details"
-      "team-list team-players past-games";
-  }
-  
-  .team-list { grid-area: team-list; }
-  
-  .team-info { grid-area: team-info; }
-  
-  .team-players { grid-area: team-players; }
-  
-  .team-details { grid-area: team-details; }
-  
-  .past-games { grid-area: past-games; }
+        "team-list team-info team-info"
+        "team-list team-players team-details"
+        "team-list team-players past-games";
+}
+
+.team-list {
+    grid-area: team-list;
+}
+
+.team-info {
+    grid-area: team-info;
+}
+
+.team-players {
+    grid-area: team-players;
+}
+
+.team-details {
+    grid-area: team-details;
+}
+
+.past-games {
+    grid-area: past-games;
+}
 
 .scroll-container {
     overflow-y: scroll;
@@ -890,7 +910,7 @@ pre {
 }
 
 .team-info-box {
-    width: 25%;  
+    width: 25%;
 }
 
 .conter-content {
@@ -1021,7 +1041,8 @@ label {
     font-size: .8rem;
 }
 
-input, select {
+input,
+select {
     width: 100%;
     border: none;
     border-bottom: solid 1px var(--c-mediumGray);
@@ -1030,7 +1051,8 @@ input, select {
     margin-bottom: var(--innerSpacing);
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
     outline: none;
 }
 
@@ -1040,7 +1062,9 @@ label span {
 
 /* Styling tablet vertial */
 @media only screen and (max-width: 1000px) {
-    body,html {
+
+    body,
+    html {
         margin: 0;
         width: 100%;
         font-family: var(--primaryFont);
@@ -1052,7 +1076,7 @@ label span {
     aside {
         width: 15%;
     }
-    
+
     main {
         width: 85%;
     }
@@ -1061,7 +1085,7 @@ label span {
         background-color: var(--c-white);
         padding: var(--outerSpacing) 0 var(--outerSpacing) var(--outerSpacing);
     }
-    
+
     .main-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1094,12 +1118,14 @@ label span {
     aside {
         width: 10%;
     }
-    
+
     main {
         width: 90%;
     }
 
-    .title-bar, .player-list-1, .player-list-2 {
+    .title-bar,
+    .player-list-1,
+    .player-list-2 {
         display: none;
     }
 }
