@@ -101,10 +101,6 @@ h1 {
     padding: 0;
 }
 
-.team-title h1 {
-    padding-top: .25rem;
-}
-
 h2 {
     margin: 0;
     padding: 0;
@@ -906,10 +902,37 @@ pre {
     margin-bottom: var(--innerSpacing);
 }
 
+.filter-options {
+    display: flex;
+    width: 100%;
+    padding-bottom: var(--innerSpacing);
+    gap: var(--innerSpacing);
+}
+
+.filter-title {
+    width: auto;
+    padding: .2rem 0rem;
+}
+
+.filter-option {
+    width: auto;
+    padding: .2rem .4rem;
+    background-color: var(--c-mediumGray);
+    border-radius: var(--innerSpacing);
+}
+
+.filter-option:hover {
+    cursor: pointer;
+}
+
 .filter-bar {
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+
+.bg-1 {
+    background-color: var(--c-mediumGray);
 }
 
 .filter-bar input {
