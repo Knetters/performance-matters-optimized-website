@@ -16,6 +16,8 @@
     --c-yellow: #F0C737;
     --c-dark: #252525;
 
+    --c-borderColor: rgba(149, 157, 165, 0.2) 0px 0px 8px;;
+
     /* Fonts */
     --primaryFont: 'Outfit', sans-serif;
     --secondairFont: 'Chakra Petch', sans-serif;
@@ -54,6 +56,7 @@ html {
     display: flex;
     flex-direction: row;
     overflow: hidden;
+    color: var(--c-dark);
 }
 
 aside {
@@ -72,7 +75,6 @@ main {
     float: left;
     height: 100%;
     transition: .2s;
-
 }
 
 .toggle-sidebar-main {
@@ -167,7 +169,8 @@ h4 {
     color: var(--c-dark);
     padding: var(--outerSpacing);
     background-color: var(--c-white);
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 8px;
+    box-shadow: var(--c-borderColor);
+    transition: .2s;
 }
 
 .title-bar {
@@ -675,13 +678,6 @@ td span {
     padding: 0;
 }
 
-.darkmode {
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 1rem;
-    font-weight: 500;
-}
-
 .darkmode:hover {
     cursor: pointer;
 }
@@ -720,7 +716,7 @@ td span {
     margin-right: 10%;
     margin-left: 15%;
     transition: .2s;
-    fill: #C1C1C1;
+    fill: var(--c-darkGray);
 }
 
 .bigger-icons {
