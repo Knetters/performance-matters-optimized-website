@@ -255,6 +255,11 @@ h4 {
     }
 }
 
+.marquee p:hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
 /* Styling live (<%- include('./partials/titleBar') %>) */
 .live-block {
     width: 10%;
