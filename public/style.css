@@ -16,7 +16,8 @@
     --c-yellow: #F0C737;
     --c-dark: #252525;
 
-    --c-borderColor: rgba(149, 157, 165, 0.2) 0px 0px 8px;;
+    --c-borderColor: rgba(149, 157, 165, 0.2) 0px 0px 8px;
+    ;
 
     /* Fonts */
     --primaryFont: 'Outfit', sans-serif;
@@ -184,6 +185,7 @@ h4 {
 
 .game-score {
     grid-area: game-score;
+    position: relative;
 }
 
 .player-list-1 {
@@ -214,13 +216,13 @@ h4 {
     gap: var(--outerSpacing);
     width: 100%;
     overflow: hidden;
+    filter: drop-shadow(rgba(149, 157, 165, 0.2) 0px 0px 8px);
 }
 
 .title-block {
     width: 90%;
     border-radius: .5rem;
     background-color: var(--c-white);
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 8px;
 }
 
 
@@ -324,26 +326,28 @@ h4 {
 }
 
 /* Styling gameScore (<%- include('./partials/gameScore') %>) */
-.shadow-score-shape {
-    filter: drop-shadow(rgba(149, 157, 165, 0.2) 0px 0px 8px);
-}
 
 .flex-container-score {
-    position: relative;
+    position: absolute;
     display: flex;
     width: 100%;
     height: 10.6rem;
     justify-content: space-around;
+    z-index: 2;
+    top: 0;
 }
 
 .container-background {
+    position: relative;
     color: var(--c-white);
 }
 
 .score-background {
-    position: absolute;
     fill: currentColor;
-    height: auto;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    filter: drop-shadow(rgba(149, 157, 165, 0.2) 0px 0px 8px);
 }
 
 .score-game {
