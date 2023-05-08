@@ -1,3 +1,30 @@
+// darmode
+let initialTheme = false;
+const darkButton = document.querySelector('.darkmode')
+const darkText = document.getElementById("darkmode-btn-text")
+
+darkButton.addEventListener ('click', toggleDarkMode);
+
+function toggleDarkMode() {
+    const root = document.documentElement;
+
+    if (initialTheme) {
+        root.style.setProperty('--c-dark', '#252525');
+        root.style.setProperty('--c-white', '#FEFEFE');
+        root.style.setProperty('--c-lightGray', '#F8F8F8');
+        root.style.setProperty('--c-borderColor', 'rgba(149, 157, 165, 0.2) 0px 0px 8px;');
+        darkText.innerHTML = "Light"
+        initialTheme = false;
+    } else {
+        root.style.setProperty('--c-dark', '#FEFEFE');
+        root.style.setProperty('--c-white', '#333333');
+        root.style.setProperty('--c-lightGray', '#252525');
+        root.style.setProperty('--c-borderColor', 'none');
+        darkText.innerHTML = "Dark"
+        initialTheme = true;
+    }
+}
+
 // Tijd aftellen
 const timerContainer = document.getElementById("time-box-container")
 
@@ -89,25 +116,3 @@ function toggleForm() {
 }
 
 // Show player data when selected
-
-// darmode
-
-let initialTheme = true;
-const darkButton = document.querySelector('.darkmode')
-const darkText = document.getElementById("darkmode-btn-text")
-
-darkButton.addEventListener ('click', toggleDarkMode);
-
-function toggleDarkMode() {
-    const root = document.documentElement;
-
-    if (initialTheme) {
-        root.style.setProperty('--c-dark', '#252525');
-        darkText.innerHTML = "Dark"
-        initialTheme = false;
-    } else {
-        root.style.setProperty('--c-dark', '#FEFEFE');
-        darkText.innerHTML = "Light"
-        initialTheme = true;
-    }
-}
