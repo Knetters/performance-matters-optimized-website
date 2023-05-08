@@ -832,10 +832,12 @@ pre {
     gap: var(--outerSpacing);
     background-color: var(--c-lightGray);
     grid-template-areas:
-      "team-list team-info team-info"
+      "team-title team-info team-info"
       "team-list team-players team-details"
       "team-list team-players past-games";
   }
+
+  .team-title { grid-area: team-title; }
   
   .team-list { grid-area: team-list; }
   
