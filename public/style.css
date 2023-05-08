@@ -220,13 +220,13 @@ h4 {
     gap: var(--outerSpacing);
     width: 100%;
     overflow: hidden;
+    filter: drop-shadow(rgba(149, 157, 165, 0.2) 0px 0px 8px);
 }
 
 .title-block {
     width: 90%;
     border-radius: .5rem;
     background-color: var(--c-white);
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 8px;
 }
 
 
