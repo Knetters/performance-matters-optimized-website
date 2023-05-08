@@ -321,15 +321,21 @@ h4 {
 }
 
 .flex-container-score {
+    position: relative;
     display: flex;
     width: 100%;
     height: 10.6rem;
     justify-content: space-around;
-    background-image: url(/static/img/GameScore-bg.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border-radius: .5em;
+}
+
+.container-background {
+    color: var(--c-white);
+}
+
+.score-background {
+    position: absolute;
+    fill: currentColor;
+    height: auto;
 }
 
 .score-game {
@@ -851,22 +857,34 @@ pre {
     gap: var(--outerSpacing);
     background-color: var(--c-lightGray);
     grid-template-areas:
-      "team-title team-info team-info"
-      "team-list team-players team-details"
-      "team-list team-players past-games";
-  }
+        "team-title team-info team-info"
+        "team-list team-players team-details"
+        "team-list team-players past-games";
+}
 
-  .team-title { grid-area: team-title; }
-  
-  .team-list { grid-area: team-list; }
-  
-  .team-info { grid-area: team-info; }
-  
-  .team-players { grid-area: team-players; }
-  
-  .team-details { grid-area: team-details; }
-  
-  .past-games { grid-area: past-games; }
+.team-title {
+    grid-area: team-title;
+}
+
+.team-list {
+    grid-area: team-list;
+}
+
+.team-info {
+    grid-area: team-info;
+}
+
+.team-players {
+    grid-area: team-players;
+}
+
+.team-details {
+    grid-area: team-details;
+}
+
+.past-games {
+    grid-area: past-games;
+}
 
 .scroll-container {
     overflow-y: scroll;
