@@ -24,19 +24,21 @@
 /* Hide scrollbar on all elements */
 ::-webkit-scrollbar {
     display: none;
-} 
+}
 
 /* Hide scrollbar on all elements */
 * {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 10+ */
 }
-  
+
 *::-webkit-scrollbar {
     width: 0;
     height: 0;
 }
-  
+
 
 * {
     box-sizing: border-box;
@@ -162,6 +164,7 @@ h4 {
 
 .panel {
     border-radius: .5rem;
+    color: var(--c-dark);
     padding: var(--outerSpacing);
     background-color: var(--c-white);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 8px;
@@ -661,6 +664,17 @@ td span {
     padding: 0;
 }
 
+.darkmode {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.darkmode:hover {
+    cursor: pointer;
+}
+
 .menu-button {
     display: flex;
     flex-direction: row;
@@ -821,7 +835,7 @@ pre {
 }
 
 /* Styling team page /teams.ejs */
-.team-grid {  
+.team-grid {
     display: grid;
     grid-template-columns: 1.1fr 1.1fr 0.8fr;
     grid-template-rows: 0.6fr 1.4fr 1fr;
@@ -892,7 +906,7 @@ pre {
 }
 
 .team-info-box {
-    width: 25%;  
+    width: 25%;
 }
 
 .conter-content {
@@ -1023,7 +1037,8 @@ label {
     font-size: .8rem;
 }
 
-input, select {
+input,
+select {
     width: 100%;
     border: none;
     border-bottom: solid 1px var(--c-mediumGray);
@@ -1032,7 +1047,8 @@ input, select {
     margin-bottom: var(--innerSpacing);
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
     outline: none;
 }
 
@@ -1042,7 +1058,9 @@ label span {
 
 /* Styling tablet vertial */
 @media only screen and (max-width: 1000px) {
-    body,html {
+
+    body,
+    html {
         margin: 0;
         width: 100%;
         font-family: var(--primaryFont);
@@ -1054,7 +1072,7 @@ label span {
     aside {
         width: 15%;
     }
-    
+
     main {
         width: 85%;
     }
@@ -1063,7 +1081,7 @@ label span {
         background-color: var(--c-white);
         padding: var(--outerSpacing) 0 var(--outerSpacing) var(--outerSpacing);
     }
-    
+
     .main-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1096,12 +1114,14 @@ label span {
     aside {
         width: 10%;
     }
-    
+
     main {
         width: 90%;
     }
 
-    .title-bar, .player-list-1, .player-list-2 {
+    .title-bar,
+    .player-list-1,
+    .player-list-2 {
         display: none;
     }
 }

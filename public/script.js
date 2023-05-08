@@ -89,3 +89,25 @@ function toggleForm() {
 }
 
 // Show player data when selected
+
+// darmode
+
+let initialTheme = true;
+const darkButton = document.querySelector('.darkmode')
+const darkText = document.getElementById("darkmode-btn-text")
+
+darkButton.addEventListener ('click', toggleDarkMode);
+
+function toggleDarkMode() {
+    const root = document.documentElement;
+
+    if (initialTheme) {
+        root.style.setProperty('--c-dark', '#252525');
+        darkText.innerHTML = "Dark"
+        initialTheme = false;
+    } else {
+        root.style.setProperty('--c-dark', '#FEFEFE');
+        darkText.innerHTML = "Light"
+        initialTheme = true;
+    }
+}
