@@ -102,9 +102,18 @@ h1 {
     padding: 0;
 }
 
+.team-title h1 {
+    padding-top: .25rem;
+}
+
 h2 {
     margin: 0;
     padding: 0;
+}
+
+.team-info-box h2 {
+    font-family: var(--secondairFont);
+    text-transform: uppercase;
 }
 
 h4 {
@@ -891,10 +900,24 @@ pre {
     height: 95%;
 }
 
+.team-title {
+    position: relative;
+}
+
 .team-header {
     width: 100%;
     display: flex;
     margin-bottom: var(--innerSpacing);
+}
+
+.filter-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.filter-bar input {
+    margin: 0;
 }
 
 .team-players-title {
@@ -1068,6 +1091,7 @@ select {
     font-size: 1rem;
     padding: var(--innerSpacing) 0;
     margin-bottom: var(--innerSpacing);
+    background-color: var(--c-white);
 }
 
 input:focus,
