@@ -38,23 +38,9 @@ app.use(express.static("public"));
 
 // Create a route for the index page
 app.get('/', async function (request, response) {
+  
   // render the index page with the data from the API
-  response.render('index', data);
-
-});
-console.log(data2);
-
-// Create a route for the player info page
-app.get('/playerInfo/:id', (request, response) => {
-  // Define the player id
-  let playerId = request.params.id;
-  // Make a url with the player id
-  let playerInfoUrl = url + 'facts/Player/' + playerId + '.json';
-  // Fetch the data from the player.
-  fetchJson(playerInfoUrl).then((data) => {
-    // Render the playerInfo and the data.
-    response.render('playerInfo', {data: data});
-  });
+  response.render('index', {...data, active: '/'});
 });
 
 // Create a route for the styleguide page
@@ -69,7 +55,7 @@ app.get('/teams', async function (request, response) {
   const data = { data1, data2, data3, data4, data5 };
 
   // Render the teams with the data.
-  response.render('teams', data);
+  response.render('teams', {...data, active: '/teams'});
 });
 
 // Handle form submission

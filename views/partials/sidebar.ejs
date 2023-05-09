@@ -17,7 +17,7 @@
         <ul class="main-menu">
             <a href="/">
                 <li class="main-menu-item">
-                    <button class="menu-button">
+                    <button class="menu-button<% if(active == '/' ) { %> active-page<% } %>">
                         <svg class="menu-icon1 menu-icon" width="18" height="18" viewBox="0 0 18 18"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -30,7 +30,7 @@
             </a>
             <a href="/teams">
                 <li class="main-menu-item">
-                    <button class="menu-button ">
+                    <button class="menu-button<% if(active == '/teams' ) { %> active-page<% } %>">
                         <svg class="menu-icon2 menu-icon" width="21" height="21" viewBox="0 0 21 21"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
