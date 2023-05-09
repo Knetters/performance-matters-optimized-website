@@ -11,16 +11,18 @@ function toggleDarkMode() {
     if (initialTheme) {
         root.style.setProperty('--c-dark', '#252525');
         root.style.setProperty('--c-white', '#FEFEFE');
-        root.style.setProperty('--c-lightGray', '#F8F8F8');
+        root.style.setProperty('--c-whiteColumns', '#FEFEFE');
+        root.style.setProperty('--c-lightGray', '#f8f8f8');
         root.style.setProperty('--c-mediumGray', '#eaeaea');
         root.style.setProperty('--c-borderColor', 'rgba(149, 157, 165, 0.2) 0px 0px 8px;');
         darkText.innerHTML = "Light"
         initialTheme = false;
     } else {
         root.style.setProperty('--c-dark', '#FEFEFE');
-        root.style.setProperty('--c-white', '#333333');
-        root.style.setProperty('--c-lightGray', '#252525');
-        root.style.setProperty('--c-mediumGray', '#424242');
+        root.style.setProperty('--c-white', '#252525');
+        root.style.setProperty('--c-whiteColumns', '#3A3A3A');
+        root.style.setProperty('--c-lightGray', '#2c2c2c');
+        root.style.setProperty('--c-mediumGray', '#323232');
         root.style.setProperty('--c-borderColor', 'none');
         darkText.innerHTML = "Dark"
         initialTheme = true;
@@ -83,6 +85,7 @@ const removeButtonText = document.querySelectorAll('.menu-button-text')
 const biggerIcons1 = document.querySelector('.menu-icon1')
 const biggerIcons2 = document.querySelector('.menu-icon2')
 const biggerIcons3 = document.querySelector('.menu-icon3')
+const biggerIcons4 = document.querySelector('.menu-icon4')
 const ultiLogo = document.querySelector('.logo')
 
 
@@ -99,6 +102,7 @@ function toggleMenu() {
     biggerIcons1.classList.toggle ('bigger-icons')
     biggerIcons2.classList.toggle ('bigger-icons')
     biggerIcons3.classList.toggle ('bigger-icons')
+    biggerIcons4.classList.toggle ('bigger-icons')
     ultiLogo.classList.toggle ('remove-logo')
     menuToggle.classList.toggle ('rotate-button')
 }

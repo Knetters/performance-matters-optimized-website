@@ -7,12 +7,13 @@
 
     /* Colors */
     --c-white: #FEFEFE;
-    --c-lightGray: #F8F8F8;
+    --c-whiteColumns: #FEFEFE;
+    --c-lightGray: #f8f8f8;
     --c-mediumGray: #eaeaea;
     --c-darkGray: #afb0af;
     --c-red: #D16950;
     --c-blue: #6f82ed;
-    --c-green: #8ADC6D;
+    --c-green: #89dc6b;
     --c-yellow: #F0C737;
     --c-dark: #252525;
 
@@ -90,8 +91,13 @@ main {
     flex-direction: column;
 }
 
+.logo-container {
+    color: var(--c-dark);
+    margin: 1rem auto;
+}
+
 .logo {
-    margin-top: var(--outerSpacing);
+    fill: currentColor;
     width: 10vw;
     transition: .2s;
 }
@@ -174,7 +180,7 @@ h4 {
     border-radius: .5rem;
     color: var(--c-dark);
     padding: var(--outerSpacing);
-    background-color: var(--c-white);
+    background-color: var(--c-whiteColumns);
     box-shadow: var(--c-borderColor);
     transition: .2s;
 }
@@ -216,13 +222,13 @@ h4 {
     gap: var(--outerSpacing);
     width: 100%;
     overflow: hidden;
-    filter: drop-shadow(rgba(149, 157, 165, 0.2) 0px 0px 8px);
+    /* filter: drop-shadow(rgba(149, 157, 165, 0.2) 0px 0px 8px); */
 }
 
 .title-block {
     width: 90%;
     border-radius: .5rem;
-    background-color: var(--c-white);
+    background-color: var(--c-whiteColumns);
 }
 
 
@@ -339,7 +345,7 @@ h4 {
 
 .container-background {
     position: relative;
-    color: var(--c-white);
+    color: var(--c-whiteColumns);
 }
 
 .score-background {
@@ -347,7 +353,7 @@ h4 {
     position: relative;
     width: 100%;
     z-index: 1;
-    filter: drop-shadow(rgba(149, 157, 165, 0.2) 0px 0px 8px);
+    /* filter: drop-shadow(rgba(149, 157, 165, 0.2) 0px 0px 8px); */
 }
 
 .score-game {
@@ -597,7 +603,7 @@ thead {
 }
 
 td {
-    padding-bottom: var(--innerSpacing);
+    padding-bottom: 0.6rem;
 }
 
 td span {
@@ -605,30 +611,31 @@ td span {
     border-radius: .3rem;
     font-size: .8rem;
     text-transform: lowercase;
+    font-weight: 600;
 }
 
 .dark-green {
     background-color: var(--c-green);
-    border: 1px solid var(--c-green);
+    border: 1.5px solid var(--c-green);
     color: var(--c-white);
 }
 
 .green {
     background-color: var(--c-white);
-    border: 1px solid var(--c-green);
-    color: var(--c-dark);
+    border: 1.5px solid var(--c-green);
+    color: var(--c-green);
 }
 
 .dark-red {
     background-color: var(--c-red);
-    border: 1px solid var(--c-red);
+    border: 1.5px solid var(--c-red);
     color: var(--c-white);
 }
 
 .red {
     background-color: var(--c-white);
-    border: 1px solid var(--c-red);
-    color: var(--c-dark);
+    border: 1.5px solid var(--c-red);
+    color: var(--c-red);
 }
 
 .plus-button {
