@@ -9,6 +9,7 @@
     --c-white: #FEFEFE;
     --c-whiteColumns: #FEFEFE;
     --c-lightGray: #f8f8f8;
+    --c-hoverGray: #f8f8f8;
     --c-mediumGray: #eaeaea;
     --c-darkGray: #afb0af;
     --c-red: #D16950;
@@ -371,6 +372,7 @@ h4 {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin: 0 auto;
 }
 
 .image-container p {
@@ -385,7 +387,7 @@ h4 {
     width: 6.5rem;
     height: auto;
     display: flex;
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.5rem 0;
     align-items: center;
 }
 
@@ -462,7 +464,7 @@ h4 {
 }
 
 .player-line:hover {
-    background-color: var(--c-lightGray);
+    background-color: var(--c-hoverGray);
 }
 
 .player-info {
@@ -480,7 +482,7 @@ h4 {
 
 .jersey-number {
     grid-area: 1 / 1 / 2 / 2;
-    color: var(--c-blue);
+    color: var(--c-dark);
     font-family: var(--secondairFont);
     margin-right: 10px;
     padding-left: 5px;
@@ -496,6 +498,8 @@ h4 {
 
 .editable:focus {
     padding: var(--innerSpacing);
+    outline: none;
+    border: 1.5px solid var(--c-blue);
 }
 
 .score-indicators {
@@ -523,7 +527,7 @@ h4 {
 }
 
 .yellow-dot {
-    background-color: var(--c-lightGray);
+    background-color: var(--c-whiteColumns);
     border: 1.5px solid var(--c-yellow);
     color: var(--c-yellow);
     text-align: center;
@@ -531,21 +535,21 @@ h4 {
 }
 
 .blue-dot {
-    background-color: var(--c-lightGray);
+    background-color: var(--c-whiteColumns);
     border: 1.5px solid var(--c-blue);
     color: var(--c-blue);
 }
 
 .black-dot {
-    background-color: var(--c-lightGray);
-    border: 1.5px solid var(--c-dark);
-    color: var(--c-dark);
+    background-color: var(--c-whiteColumns);
+    border: 1.5px solid var(--c-red);
+    color: var(--c-red);
 }
 
 .grey-dot {
-    background-color: var(--c-lightGray);
-    border: 1.5px solid var(--c-darkGray);
-    color: var(--c-darkGray);
+    background-color: var(--c-whiteColumns);
+    border: 1.5px solid var(--c-green);
+    color: var(--c-green);
 }
 
 .no-dot {
@@ -621,7 +625,7 @@ td span {
 }
 
 .green {
-    background-color: var(--c-white);
+    background-color: none;
     border: 1.5px solid var(--c-green);
     color: var(--c-green);
 }
@@ -633,7 +637,7 @@ td span {
 }
 
 .red {
-    background-color: var(--c-white);
+    background-color: none;
     border: 1.5px solid var(--c-red);
     color: var(--c-red);
 }

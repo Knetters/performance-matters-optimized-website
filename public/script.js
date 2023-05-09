@@ -13,6 +13,7 @@ function toggleDarkMode() {
         root.style.setProperty('--c-white', '#FEFEFE');
         root.style.setProperty('--c-whiteColumns', '#FEFEFE');
         root.style.setProperty('--c-lightGray', '#f8f8f8');
+        root.style.setProperty('--c-hoverGray', '#f8f8f8');
         root.style.setProperty('--c-mediumGray', '#eaeaea');
         root.style.setProperty('--c-borderColor', 'rgba(149, 157, 165, 0.2) 0px 0px 8px;');
         darkText.innerHTML = "Light"
@@ -22,6 +23,7 @@ function toggleDarkMode() {
         root.style.setProperty('--c-white', '#252525');
         root.style.setProperty('--c-whiteColumns', '#3A3A3A');
         root.style.setProperty('--c-lightGray', '#2c2c2c');
+        root.style.setProperty('--c-hoverGray', '#3e3e3e');
         root.style.setProperty('--c-mediumGray', '#323232');
         root.style.setProperty('--c-borderColor', 'none');
         darkText.innerHTML = "Dark"
