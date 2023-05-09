@@ -222,7 +222,7 @@ h4 {
     gap: var(--outerSpacing);
     width: 100%;
     overflow: hidden;
-    /* filter: drop-shadow(rgba(149, 157, 165, 0.2) 0px 0px 8px); */
+    filter: drop-shadow(var(--c-borderColor) 0px 0px 8px);
 }
 
 .title-block {
@@ -281,7 +281,6 @@ h4 {
 .live-block {
     width: 10%;
     text-align: center;
-    box-shadow: var(--c-borderColor) 0px 0px 8px;
 }
 
 .live-flex-container {
@@ -348,6 +347,7 @@ h4 {
 .container-background {
     position: relative;
     color: var(--c-whiteColumns);
+    filter: drop-shadow(var(--c-borderColor) 0px 0px 8px);
 }
 
 .score-background {
@@ -355,7 +355,6 @@ h4 {
     position: relative;
     width: 100%;
     z-index: 1;
-    /* filter: drop-shadow(rgba(149, 157, 165, 0.2) 0px 0px 8px); */
 }
 
 .score-game {
