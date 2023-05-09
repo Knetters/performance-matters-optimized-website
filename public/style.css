@@ -18,8 +18,7 @@
     --c-yellow: #F0C737;
     --c-dark: #252525;
 
-    --c-borderColor: rgba(149, 157, 165, 0.2) 0px 0px 8px;
-    ;
+    --c-borderColor: rgba(149, 157, 165, 0.2);
 
     /* Fonts */
     --primaryFont: 'Outfit', sans-serif;
@@ -182,7 +181,7 @@ h4 {
     color: var(--c-dark);
     padding: var(--outerSpacing);
     background-color: var(--c-whiteColumns);
-    box-shadow: var(--c-borderColor);
+    box-shadow: var(--c-borderColor) 0px 0px 8px;
     transition: .2s;
 }
 
@@ -230,6 +229,7 @@ h4 {
     width: 90%;
     border-radius: .5rem;
     background-color: var(--c-whiteColumns);
+    box-shadow: var(--c-borderColor) 0px 0px 8px;
 }
 
 
@@ -281,6 +281,7 @@ h4 {
 .live-block {
     width: 10%;
     text-align: center;
+    box-shadow: var(--c-borderColor) 0px 0px 8px;
 }
 
 .live-flex-container {
@@ -707,30 +708,30 @@ td span {
     flex-direction: row;
     background: none;
     border: none;
-    padding: 0;
+    margin-left: 10%;
     cursor: pointer;
     align-items: center;
-    width: 100%;
+    width: 90%;
     height: 2.5rem;
     transform: translateX(-10%);
     transition: .2s;
 }
 
 .menu-button:hover {
-    border-left: 4px solid var(--c-blue);
+    box-shadow: inset 4px 0em var(--c-blue);
 }
 
 .menu-button:hover h4 {
     color: var(--c-blue);
 }
 
-.menu-button:focus h4 {
+/* .menu-button:focus h4 {
     color: var(--c-blue);
 }
 
 .menu-button:focus {
     border-left: 4px solid var(--c-blue);
-}
+} */
 
 .menu-icon {
     margin-right: 10%;
@@ -802,7 +803,7 @@ td span {
     color: #FEFEFE;
     padding: var(--innerSpacing);
     border-radius: var(--innerSpacing);
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 8px;
+    box-shadow: var(--c-borderColor) 0px 0px 8px;
 }
 
 .styleguide-container .panel {
@@ -858,7 +859,7 @@ pre {
     padding: 0rem 1rem;
     background-color: var(--c-mediumGray);
     border-radius: var(--innerSpacing);
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 8px;
+    box-shadow: var(--c-borderColor) 0px 0px 8px;
 }
 
 /* Styling team page /teams.ejs */
@@ -948,7 +949,7 @@ pre {
 
 .bg-1 {
     background-color: var(--c-white);
-    box-shadow: var(--c-borderColor);
+    box-shadow: var(--c-borderColor) 0px 0px 8px;
 }
 
 .filter-bar input {
@@ -1184,10 +1185,12 @@ label span {
 
     .title-block {
         width: 85%;
+        box-shadow: var(--c-borderColor) 0px 0px 8px;
     }
 
     .live-block {
         width: 15%;
+        box-shadow: var(--c-borderColor) 0px 0px 8px;
     }
 }
 

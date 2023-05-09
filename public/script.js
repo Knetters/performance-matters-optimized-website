@@ -1,34 +1,33 @@
 // darmode
+const darkButton = document.querySelector('.darkmode');
+const darkText = document.getElementById("darkmode-btn-text");
+const root = document.documentElement;
 let initialTheme = false;
-const darkButton = document.querySelector('.darkmode')
-const darkText = document.getElementById("darkmode-btn-text")
 
-darkButton.addEventListener ('click', toggleDarkMode);
+darkButton.addEventListener('click', toggleDarkMode);
 
 function toggleDarkMode() {
-    const root = document.documentElement;
-
-    if (initialTheme) {
-        root.style.setProperty('--c-dark', '#252525');
-        root.style.setProperty('--c-white', '#FEFEFE');
-        root.style.setProperty('--c-whiteColumns', '#FEFEFE');
-        root.style.setProperty('--c-lightGray', '#f8f8f8');
-        root.style.setProperty('--c-hoverGray', '#f8f8f8');
-        root.style.setProperty('--c-mediumGray', '#eaeaea');
-        root.style.setProperty('--c-borderColor', 'rgba(149, 157, 165, 0.2) 0px 0px 8px;');
-        darkText.innerHTML = "Light"
-        initialTheme = false;
-    } else {
-        root.style.setProperty('--c-dark', '#FEFEFE');
-        root.style.setProperty('--c-white', '#252525');
-        root.style.setProperty('--c-whiteColumns', '#3A3A3A');
-        root.style.setProperty('--c-lightGray', '#2c2c2c');
-        root.style.setProperty('--c-hoverGray', '#3e3e3e');
-        root.style.setProperty('--c-mediumGray', '#323232');
-        root.style.setProperty('--c-borderColor', 'none');
-        darkText.innerHTML = "Dark"
-        initialTheme = true;
-    }
+  if (initialTheme) {
+    root.style.setProperty('--c-dark', '#252525');
+    root.style.setProperty('--c-white', '#FEFEFE');
+    root.style.setProperty('--c-whiteColumns', '#FEFEFE');
+    root.style.setProperty('--c-lightGray', '#f8f8f8');
+    root.style.setProperty('--c-hoverGray', '#f8f8f8');
+    root.style.setProperty('--c-mediumGray', '#eaeaea');
+    root.style.setProperty('--c-borderColor', 'rgba(149, 157, 165, 0.2)');
+    darkText.innerHTML = "Light";
+    initialTheme = false;
+  } else {
+    root.style.setProperty('--c-dark', '#FEFEFE');
+    root.style.setProperty('--c-white', '#252525');
+    root.style.setProperty('--c-whiteColumns', '#3A3A3A');
+    root.style.setProperty('--c-lightGray', '#2c2c2c');
+    root.style.setProperty('--c-hoverGray', '#3e3e3e');
+    root.style.setProperty('--c-mediumGray', '#323232');
+    root.style.setProperty('--c-borderColor', 'rgba(149, 157, 165, 0.0)');
+    darkText.innerHTML = "Dark";
+    initialTheme = true;
+  }
 }
 
 // Tijd aftellen
