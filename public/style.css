@@ -1038,7 +1038,7 @@ pre {
 }
 
 .team-line:hover {
-    background-color: var(--c-lightGray);
+    background-color: var(--c-hoverGray);
     cursor: pointer;
 }
 
