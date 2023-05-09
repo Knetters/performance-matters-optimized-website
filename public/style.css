@@ -936,7 +936,8 @@ pre {
 }
 
 .bg-1 {
-    background-color: var(--c-mediumGray);
+    background-color: var(--c-white);
+    box-shadow: var(--c-borderColor);
 }
 
 .filter-bar input {
