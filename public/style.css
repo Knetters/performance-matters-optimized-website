@@ -8,7 +8,7 @@
     /* Colors */
     --c-white: #FEFEFE;
     --c-whiteColumns: #FEFEFE;
-    --c-lightGray: #f8f8f8;
+    --c-lightGray: #f7f7f7;
     --c-hoverGray: #f8f8f8;
     --c-mediumGray: #eaeaea;
     --c-darkGray: #afb0af;
@@ -1039,7 +1039,7 @@ pre {
 }
 
 .team-line:hover {
-    background-color: var(--c-lightGray);
+    background-color: var(--c-hoverGray);
     cursor: pointer;
 }
 
@@ -1127,7 +1127,8 @@ select {
     font-size: 1rem;
     padding: var(--innerSpacing) 0;
     margin-bottom: var(--innerSpacing);
-    background-color: var(--c-white);
+    background-color: var(--c-whiteColumns);
+    color: var(--c-dark)
 }
 
 input:focus,
