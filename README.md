@@ -1,5 +1,5 @@
 # Ulti.TV Commentators dashboard
-<img width="771" alt="image" src="https://github.com/Knetters/performance-matters-optimized-website/assets/112857190/c2eaa029-4fc5-4b41-ac16-b211000562a3">
+<img width="814" alt="image" src="https://github.com/Knetters/performance-matters-optimized-website/assets/112857190/c2eaa029-4fc5-4b41-ac16-b211000562a3">
 <img width="814" alt="image" src="https://github.com/Knetters/performance-matters-optimized-website/assets/112857190/de0db92f-1a7d-4b6e-b80a-7fef5ed44411">
 
 
