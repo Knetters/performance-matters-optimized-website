@@ -45,7 +45,7 @@ app.get('/', async function (request, response) {
 
 // Create a route for the styleguide page
 app.get('/styleguide', async function (request, response) {
-  response.render('styleguide');
+  response.render('styleguide', {...data, active: '/'});
 });
 
 // Create a route for the index page
