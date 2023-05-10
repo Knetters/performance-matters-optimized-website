@@ -44,6 +44,7 @@ Hierdoor kan iedereen de inhoud van de website bekijken en gebruiken maar voor g
         <li>🥜 Node </li>
   </ul>      
 
+_Dit projects is gemaakt door Sanne, Thomas en Milan._
 
 ## Licentie
 
