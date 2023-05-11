@@ -30,6 +30,12 @@ function toggleDarkMode() {
   }
 }
 
+// Loading screen
+window.addEventListener('load', function () {
+    const loadingPage = document.querySelector('#loading');
+    loadingPage.style.display = 'none';
+});
+
 // Tijd aftellen
 const timerContainer = document.getElementById("time-box-container")
 
@@ -120,10 +126,4 @@ closePlayerButton.addEventListener ("click", toggleForm)
 function toggleForm() {
     teamPlayers.classList.toggle("d-none")
     playerForm.classList.toggle("active")
-}
-
-// Loading screen
-window.onload = function() {
-    var loadingScreen = document.getElementById("loading-screen");
-    loadingScreen.style.display = "none";
 }
