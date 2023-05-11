@@ -20,11 +20,6 @@ const urls = [
   apiUrl
 ];
 
-// Wait for all the data to load and map it.
-const [data1, data2, data3, data4, data5] = await Promise.all(urls.map(fetchJson));
-// Combine the url into one data type to send in the view.
-const data = {data1, data2, data3, data4, data5};
-
 // Set EJS as the template engine and specify the views directory.
 app.set("view engine", "ejs");
 app.set("views", "./views");
@@ -35,26 +30,41 @@ app.use(express.urlencoded({ extended: true }))
 // Serve static files from the public directory
 app.use(express.static("public"));
 
-
-// Create a route for the index page
+// Create a route for the index page.
 app.get('/', async function (request, response) {
-  
-  // render the index page with the data from the API
+  // Fetch the data from the API.
+  const [data1, data2, data3, data4, data5] = await Promise.all(urls.map(fetchJson));
+  const data = { data1, data2, data3, data4, data5 };
+
+  // Render the index page with the data from the API.
   response.render('index', {...data, active: '/'});
 });
 
 // Create a route for the styleguide page
-app.get('/styleguide', async function (request, response) {
-  response.render('styleguide', {...data, active: '/'});
-});
-
-// Create a route for the index page
-app.get('/teams', async function (request, response) {
-  // Fetch the data from the API
+app.get('/loading', async function (request, response) {
+  // Fetch the data from the API.
   const [data1, data2, data3, data4, data5] = await Promise.all(urls.map(fetchJson));
   const data = { data1, data2, data3, data4, data5 };
 
-  // Render the teams with the data.
+  response.render('loading', {...data, active: '/'});
+});
+
+// Create a route for the styleguide page
+app.get('/styleguide', async function (request, response) {
+  // Fetch the data from the API.
+  const [data1, data2, data3, data4, data5] = await Promise.all(urls.map(fetchJson));
+  const data = { data1, data2, data3, data4, data5 };
+
+  response.render('styleguide', {...data, active: '/'});
+});
+
+// Create a route for the teams page.
+app.get('/teams', async function (request, response) {
+  // Fetch the data from the API.
+  const [data1, data2, data3, data4, data5] = await Promise.all(urls.map(fetchJson));
+  const data = { data1, data2, data3, data4, data5 };
+
+  // Render the teams page with the data from the API.
   response.render('teams', {...data, active: '/teams'});
 });
 

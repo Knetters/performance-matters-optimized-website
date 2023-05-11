@@ -183,6 +183,7 @@ h4 {
     background-color: var(--c-whiteColumns);
     box-shadow: var(--c-borderColor) 0px 0px 8px;
     transition: .2s;
+    position: relative;
 }
 
 .title-bar {
@@ -389,6 +390,7 @@ h4 {
     display: flex;
     margin: 0 0 0.5rem 0;
     align-items: center;
+    background-color: var(--c-whiteColumns);
 }
 
 .time-box-container {
@@ -1112,6 +1114,7 @@ pre {
     width: 12vw;
     margin-left: auto;
     margin-right: auto;
+    background-color: var(--c-whiteColumns);
 }
 
 .team-line {
@@ -1220,6 +1223,36 @@ select:focus {
 
 label span {
     color: var(--c-red);
+}
+
+.loading-screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loading-screen img {
+    width: 5rem;
+    margin-top: -5rem;
+    animation: rotate 2s linear infinite;
+  }
+  
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Styling tablet vertial */

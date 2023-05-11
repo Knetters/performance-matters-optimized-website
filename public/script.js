@@ -122,4 +122,8 @@ function toggleForm() {
     playerForm.classList.toggle("active")
 }
 
-// Show player data when selected
+// Loading screen
+window.onload = function() {
+    var loadingScreen = document.getElementById("loading-screen");
+    loadingScreen.style.display = "none";
+}
