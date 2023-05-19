@@ -30,12 +30,6 @@ function toggleDarkMode() {
   }
 }
 
-// Loading screen
-window.addEventListener('load', function () {
-    const loadingPage = document.querySelector('#loading');
-    loadingPage.style.display = 'none';
-});
-
 // Tijd aftellen
 const timerContainer = document.getElementById("time-box-container")
 
@@ -63,25 +57,21 @@ if(timerContainer) {
     }, 1000)
 }
 
-// Quote panel toggelen
-const quoteBlock = document.getElementById("quote-block")
-const plusButton = document.getElementById("plus-button")
+// Connect to the Socket.IO server
+const socket = io();
 
-// Min knop function
-if(quoteBlock) {
-    document.getElementById("min-button").addEventListener("click", toggleBlockOff);
+// Listen for the "scoreUpdate" event and update the UI
+socket.on("scoreUpdate", (score) => {
+  document.getElementById("scoredByPlayerName").textContent = score;
+});
 
-    function toggleBlockOff() {
-        quoteBlock.classList.toggle("d-none")
-        plusButton.classList.toggle("d-block")
-    }
+// Submit the form and emit the "playerScore" event
+function submitForm(event) {
+  event.preventDefault();
 
-    document.getElementById("plus-button").addEventListener("click", toggleBlockOn);
-
-    // Plus knop function
-    function toggleBlockOn() {
-        quoteBlock.classList.toggle("d-none")
-    }
+  const playerScore = document.getElementById("playerScored").value;
+  socket.emit("playerScore", playerScore);
+  document.getElementById("playerScored").value = "";
 }
 
 // menu in en uitklappen
@@ -94,9 +84,6 @@ const biggerIcons2 = document.querySelector('.menu-icon2')
 const biggerIcons3 = document.querySelector('.menu-icon3')
 const biggerIcons4 = document.querySelector('.menu-icon4')
 const ultiLogo = document.querySelector('.logo')
-
-
-
 
 menuToggle.addEventListener ('click', toggleMenu)
 
@@ -120,10 +107,20 @@ const closePlayerButton = document.getElementById("close-player-button")
 const teamPlayers = document.getElementById("teamPlayers")
 const playerForm = document.getElementById("playerForm")
 
-addPlayerButton.addEventListener ("click", toggleForm)
-closePlayerButton.addEventListener ("click", toggleForm)
+if(addPlayerButton) {
+    addPlayerButton.addEventListener ("click", toggleForm)
+    closePlayerButton.addEventListener ("click", toggleForm)
 
-function toggleForm() {
-    teamPlayers.classList.toggle("d-none")
-    playerForm.classList.toggle("active")
+    function toggleForm() {
+        teamPlayers.classList.toggle("d-none")
+        playerForm.classList.toggle("active")
+    }
 }
+
+// Loading screen
+window.addEventListener('load', function () {
+    const loadingPage = document.querySelector('#loading');
+    if(loadingPage) {
+        loadingPage.style.display = 'none';
+    }
+});
