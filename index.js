@@ -1,116 +1,137 @@
 // Import the required modules.
 import express from "express";
 import fetch from "node-fetch";
-import { createServer } from "http";
-import { Server } from "socket.io";
 
 // Create a new Express app.
 const app = express();
-const server = createServer(app);
-const io = new Server(server);
 
-// The API URLs.
-const apiUrl = "https://raw.githubusercontent.com/fdnd-agency/ultitv/main/ultitv-api";
+// The API's.
+const url = "https://raw.githubusercontent.com/fdnd-agency/ultitv/main/ultitv-api";
+
 const postUrl = "https://api.ultitv.fdnd.nl/api/v1/players?first=100";
+const apiUrl = "https://api.ultitv.fdnd.nl/api/v1/questions";
+
+// All different url's for the API.
 const urls = [
-  `${apiUrl}/game/943.json`,
-  `${apiUrl}/game/943/statistics.json`,
-  `${apiUrl}/facts/Player/8607.json`,
+  url + "/game/943.json",
+  url + "/game/943/statistics.json",
+  url + "/facts/Player/8607.json",
   postUrl,
-  `${apiUrl}/api/v1/questions`
+  apiUrl
 ];
 
 // Set EJS as the template engine and specify the views directory.
 app.set("view engine", "ejs");
 app.set("views", "./views");
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
-// Serve static files from the public directory.
+// Serve static files from the public directory
 app.use(express.static("public"));
 
 // Create a route for the index page.
 app.get('/', async function (request, response) {
   // Fetch the data from the API.
-  const data = await fetchData();
+  const [data1, data2, data3, data4, data5] = await Promise.all(urls.map(fetchJson));
+  const data = { data1, data2, data3, data4, data5 };
 
   // Render the index page with the data from the API.
-  response.render('index', { ...data, active: '/' });
+  response.render('index', {...data, active: '/'});
 });
 
-// Create a route for the loading page.
+// Create a route for the styleguide page
 app.get('/loading', async function (request, response) {
   // Fetch the data from the API.
-  const data = await fetchData();
+  const [data1, data2, data3, data4, data5] = await Promise.all(urls.map(fetchJson));
+  const data = { data1, data2, data3, data4, data5 };
 
-  response.render('loading', { ...data, active: '/' });
+  response.render('loading', {...data, active: '/'});
 });
 
-// Create a route for the styleguide page.
+// Create a route for the styleguide page
 app.get('/styleguide', async function (request, response) {
   // Fetch the data from the API.
-  const data = await fetchData();
+  const [data1, data2, data3, data4, data5] = await Promise.all(urls.map(fetchJson));
+  const data = { data1, data2, data3, data4, data5 };
 
-  response.render('styleguide', { ...data, active: '/' });
+  response.render('styleguide', {...data, active: '/'});
 });
 
-// Socket.IO logic
-io.on("connection", (socket) => {
-  console.log("A user connected!");
-
-  // Listen for the player score event
-  socket.on("playerScore", (score) => {
-    console.log("Player score data:", score); // Log the data being sent
-
-    // Emit the player score to all connected clients
-    io.emit("scoreUpdate", score);
-  });
-
-  // Disconnect event
-  socket.on("disconnect", () => {
-    console.log("A user disconnected!");
-  });
-});
-
-// Create a route for the stats page.
-app.get("/stats", async function (request, response) {
+// Create a route for the teams page.
+app.get('/teams', async function (request, response) {
   // Fetch the data from the API.
-  const data = await fetchData();
+  const [data1, data2, data3, data4, data5] = await Promise.all(urls.map(fetchJson));
+  const data = { data1, data2, data3, data4, data5 };
 
-  // Render the stats page with the data from the API.
-  response.render("stats", { ...data, active: "/stats" });
+  // Render the teams page with the data from the API.
+  response.render('teams', {...data, active: '/teams'});
 });
 
 // Handle form submission
 app.post('/newPlayer', async function (request, response) {
   // Extract the form data from the request body
-  const { playerScored } = request.body;
+  const { name, gender, jerseyNumber, image, team, question, content } = request.body;
 
-  // Emit the player score to all connected clients
-  io.emit("scoreUpdate", playerScored);
+  // Construct the request body in the desired format
+  const requestBody = {
+    "name": name,
+    "gender": gender,
+    "jerseyNumber": jerseyNumber,
+    "image": image,
+    "team": team,
+    "answers": [
+      {
+        "content": content,
+        "questionId": question
+      }
+    ]
+  };
 
-  // Redirect the user to the stats route
-  response.redirect('/stats');
+  // Make a POST request to the API endpoint
+  const postResponse = await fetch(postUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(requestBody)
+  });
+
+  // Wait for the post request to complete before fetching the updated data
+  await postResponse.json();
+
+  // Fetch the updated data from the API
+  const [newData1, newData2, newData3, newData4, newData5] = await Promise.all(urls.map(fetchJson));
+  const newData = { data1: newData1, data2: newData2, data3: newData3, data4: newData4, data5: newData5 };
+
+  // Redirect the user to the teams route
+  response.redirect('/teams');
 });
 
-// Fetch data from the API
-async function fetchData() {
-  const [data1, data2, data3, data4, data5] = await Promise.all(urls.map(fetchJson));
-  return { data1, data2, data3, data4, data5 };
-}
+// -------------------- Start local host ---------------------
 
 // Set the port number and start the server
-const port = process.env.PORT || 3000;
-server.listen(port, () => {
-  console.log("Application available on: http://localhost:" + port);
+const port = process.env.PORT || 8000;
+app.listen(port, () => {
+  console.log(`
+
+  ░██████╗███████╗██████╗░██╗░░░██╗███████╗██████╗░  ██████╗░███████╗░█████╗░██████╗░██╗░░░██╗
+  ██╔════╝██╔════╝██╔══██╗██║░░░██║██╔════╝██╔══██╗  ██╔══██╗██╔════╝██╔══██╗██╔══██╗╚██╗░██╔╝
+  ╚█████╗░█████╗░░██████╔╝╚██╗░██╔╝█████╗░░██████╔╝  ██████╔╝█████╗░░███████║██║░░██║░╚████╔╝░
+  ░╚═══██╗██╔══╝░░██╔══██╗░╚████╔╝░██╔══╝░░██╔══██╗  ██╔══██╗██╔══╝░░██╔══██║██║░░██║░░╚██╔╝░░
+  ██████╔╝███████╗██║░░██║░░╚██╔╝░░███████╗██║░░██║  ██║░░██║███████╗██║░░██║██████╔╝░░░██║░░░
+  ╚═════╝░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░╚══════╝╚═╝░░╚═╝  ╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝╚═════╝░░░░╚═╝░░░
+  (Geen error Sanne!)
+  
+  Application available on: http://localhost:${port}
+  `);
 });
 
-// Wait until the data exists and fetches the data.
+// Wait untill the data exists end fetches the data.
 async function fetchJson(url) {
   return await fetch(url)
     .then((response) => response.json())
-    .catch((error) => error);
+    .catch((error) => error)
 }
 
 // Wait untill the data exists and posts the data. 
