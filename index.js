@@ -58,13 +58,12 @@ app.get('/styleguide', async function (request, response) {
   response.render('styleguide', {...data, active: '/'});
 });
 
-// Create a route for the teams page.
+// Create a route for the styleguide page
 app.get('/teams', async function (request, response) {
   // Fetch the data from the API.
   const [data1, data2, data3, data4, data5] = await Promise.all(urls.map(fetchJson));
   const data = { data1, data2, data3, data4, data5 };
 
-  // Render the teams page with the data from the API.
   response.render('teams', {...data, active: '/teams'});
 });
 
