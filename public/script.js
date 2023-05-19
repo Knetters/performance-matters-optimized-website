@@ -62,7 +62,10 @@ const socket = io();
 
 // Listen for the "scoreUpdate" event and update the UI
 socket.on("scoreUpdate", (score) => {
-  document.getElementById("scoredByPlayerName").textContent = score;
+  const scoredByPlayerNames = document.getElementById("scoredByPlayerNames");
+  const listItem = document.createElement("li");
+  listItem.textContent = score;
+  scoredByPlayerNames.appendChild(listItem);
 });
 
 // Submit the form and emit the "playerScore" event
